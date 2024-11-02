@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 interface SkillLogo {
   name: string;
@@ -7,9 +7,9 @@ interface SkillLogo {
 }
 
 const skillLogos: SkillLogo[] = [
-  { name: "Python", imageUrl: "/Images/Python.png" },
+  { name: "Python", imageUrl: "/Images/Python_Logo.png" },
   { name: "Javascript", imageUrl: "/Images/JavaScript.png" },
-  { name: "STM", imageUrl: "/Images/STM.png" },
+  { name: "STM", imageUrl: "/Images/STM_Logo.png" },
   { name: "STMCube", imageUrl: "/Images/STM32_Cube.png" },
   { name: "Swift", imageUrl: "/Images/Swift.png" },
   { name: "SwiftUI", imageUrl: "/Images/SwiftUI.png" },
@@ -45,7 +45,8 @@ const skillLogos: SkillLogo[] = [
   { name: "Keynote", imageUrl: "/Images/Keynote_Logo.png" },
   { name: "Photoshop", imageUrl: "/Images/Photoshop_Logo.png" },
   { name: "Matlab", imageUrl: "/Images/Matlab_Logo.png" },
-  { name: "LtSpice", imageUrl: "/Images/LTSpice_Logo.png"}
+  { name: "LtSpice", imageUrl: "/Images/LTSpice_Logo.png"},
+  { name: "Lora", imageUrl: "/Images/Lora_Logo.png"}
 
 
 
@@ -53,8 +54,18 @@ const skillLogos: SkillLogo[] = [
   // Add more skills here
 ];
 
+// First, let's create a base size that scales with screen size
+const getBaseSize = () => {
+  if (typeof window === 'undefined') return 64; // Default for SSR
+  const vw = window.innerWidth;
+  if (vw < 640) return 48; // sm
+  if (vw < 1024) return 64; // md/lg
+  return 80; // xl and above
+};
+
+// Modify the logoScales to be multipliers of the base size
 const logoScales: { [key: string]: number } = {
-  "STM": 1,
+  "STM": 1.5,
   "STMCube": 2,
   "LtSpice": 1.2,
   "Matlab": 1,
@@ -69,12 +80,22 @@ const logoScales: { [key: string]: number } = {
   "Stripe": 1.5,
   "Latex": 1.4,
   "Unity": 2,
+  "Python": 2,
+  "CSS":2,
+  "NextJS": 1.5,
+  "AWS": 1.5,
+  "Lora": 1.5,
   // Add more logos that need scaling
 };
+
+const MIN_SPEED = 0.75; // Adjust this value to set minimum speed
+const DEFAULT_SIZE = 64;
 
 const FloatingSkillsBackground: React.FC = () => {
   const logoRefs = useRef<HTMLDivElement[]>([]);
   const animationFrameRef = useRef<number>();
+  const [isPositioned, setIsPositioned] = useState(false);
+  const [baseSize, setBaseSize] = useState(DEFAULT_SIZE);
   const velocities = useRef<Array<{ x: number; y: number }>>(
     skillLogos.map(() => ({
       x: (Math.random() - 0.5) * 2,
@@ -82,7 +103,10 @@ const FloatingSkillsBackground: React.FC = () => {
     }))
   );
 
+  // Initialize sizes and start animation after mount
   useEffect(() => {
+    setBaseSize(getBaseSize());
+    
     const animate = () => {
       logoRefs.current.forEach((logo, index) => {
         if (!logo) return;
@@ -133,6 +157,8 @@ const FloatingSkillsBackground: React.FC = () => {
       logo.style.top = `${Math.random() * (parentRect.height - logoRect.height)}px`;
     });
 
+    // Set positioned to true and start animation
+    setIsPositioned(true);
     animate();
 
     return () => {
@@ -150,10 +176,17 @@ const FloatingSkillsBackground: React.FC = () => {
           ref={(el) => {
             if (el) logoRefs.current[index] = el;
           }}
-          className="absolute w-16 h-16 bg-no-repeat bg-center bg-contain p-2 min-w-[64px] min-h-[64px]"
+          className="absolute bg-no-repeat bg-center bg-contain p-2 transition-opacity duration-500"
           style={{
             backgroundImage: `url(${logo.imageUrl})`,
-            transform: `scale(${logoScales[logo.name] || 1})`
+            transform: `scale(${logoScales[logo.name] || 1})`,
+            width: `${baseSize}px`,
+            height: `${baseSize}px`,
+            minWidth: `${baseSize}px`,
+            minHeight: `${baseSize}px`,
+            opacity: isPositioned ? 1 : 0,
+            left: '0px',
+            top: '0px'
           }}
         />
       ))}
