@@ -124,7 +124,7 @@ const FloatingSkillsBackground: React.FC = () => {
     };
 
     // Initialize random starting positions
-    logoRefs.current.forEach((logo, index) => {
+    logoRefs.current.forEach((logo) => {
       if (!logo || !logo.parentElement) return;
       const parentRect = logo.parentElement.getBoundingClientRect();
       const logoRect = logo.getBoundingClientRect();
