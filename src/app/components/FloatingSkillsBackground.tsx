@@ -146,7 +146,7 @@ const FloatingSkillsBackground: React.FC = () => {
     <section className="relative w-full h-screen overflow-hidden bg-gray-100 border-2 border-blue-500 bg-white">
       {skillLogos.map((logo, index) => (
         <div
-          key={index}
+          key={`skill-${index}`}
           ref={(el) => {
             if (el) logoRefs.current[index] = el;
           }}
