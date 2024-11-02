@@ -46,7 +46,8 @@ const skillLogos: SkillLogo[] = [
   { name: "Photoshop", imageUrl: "/Images/Photoshop_Logo.png" },
   { name: "Matlab", imageUrl: "/Images/Matlab_Logo.png" },
   { name: "LtSpice", imageUrl: "/Images/LTSpice_Logo.png"},
-  { name: "Lora", imageUrl: "/Images/Lora_Logo.png"}
+  { name: "Lora", imageUrl: "/Images/Lora_Logo.png"},
+  { name: "FlutterFlow", imageUrl: "/Images/FlutterFlow_Logo.png"}
 
 
 
@@ -97,10 +98,14 @@ const FloatingSkillsBackground: React.FC = () => {
   const [isPositioned, setIsPositioned] = useState(false);
   const [baseSize, setBaseSize] = useState(DEFAULT_SIZE);
   const velocities = useRef<Array<{ x: number; y: number }>>(
-    skillLogos.map(() => ({
-      x: (Math.random() - 0.5) * 2,
-      y: (Math.random() - 0.5) * 2
-    }))
+    skillLogos.map(() => {
+      const angle = Math.random() * 2 * Math.PI;
+      const speed = MIN_SPEED + Math.random();
+      return {
+        x: Math.cos(angle) * speed,
+        y: Math.sin(angle) * speed
+      };
+    })
   );
 
   // Initialize sizes and start animation after mount
