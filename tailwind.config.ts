@@ -12,6 +12,9 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      animation: {
+        floating: "float 10s infinite ease-in-out",
+      },
     },
   },
   plugins: [],
