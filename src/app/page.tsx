@@ -3,6 +3,7 @@ import HeroOverlay from "../components/HeroOverlay";
 import Navbar from "../components/Navbar";
 import AboutMe from '@/components/AboutMe';
 import GitHubCommitCalendar from "@/components/GitHubCommitCalendar";
+import Timeline from "@/components/Timeline";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       </div>
       <AboutMe />
       <GitHubCommitCalendar />
+      <Timeline />
     </main>
   );
 }
