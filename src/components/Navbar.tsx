@@ -78,6 +78,8 @@ const Navbar = () => {
                 <Image
                   src={isDarkMode ? "/Images/moon.png" : "/Images/sun.png"}
                   alt="Theme icon"
+                  width={16}
+                  height={16}
                   className="w-4 h-4 mx-auto mt-1.5"
                 />
               </div>
