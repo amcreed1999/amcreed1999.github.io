@@ -26,7 +26,7 @@ const HeroOverlay = () => {
               Software Developer & Engineer
             </p>
             <p className="text-blue-600/80 dark:text-gray-400 max-w-md text-sm md:text-base">
-              Passionate about breaking things in the name of progress.
+              Passionate about breaking things in the name of progress. Check out all my skills behind me. 
             </p>
           </div>
           
