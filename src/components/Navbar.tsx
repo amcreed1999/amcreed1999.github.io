@@ -1,37 +1,17 @@
 "use client";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 const Navbar = () => {
+  const { theme, setTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Check and apply the saved theme on component mount
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setIsDarkMode(true);
-      document.documentElement.classList.add("dark");
-    } else {
-      setIsDarkMode(false);
-      document.documentElement.classList.remove("dark");
-    }
-  }, []);
-
-  // Toggle theme and update localStorage
+  // Toggle theme
   const toggleTheme = () => {
-    setIsDarkMode((prevMode) => {
-      const newMode = !prevMode;
-      localStorage.setItem("theme", newMode ? "dark" : "light");
-      if (newMode) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-      return newMode;
-    });
+    setTheme(theme === "dark" ? "light" : "dark");
   };
 
   return (
@@ -67,16 +47,16 @@ const Navbar = () => {
             <div
               onClick={toggleTheme}
               className={`w-14 h-8 flex items-center rounded-full cursor-pointer p-1 transition-colors duration-300 ${
-                isDarkMode ? "bg-blue-600" : "bg-gray-300"
+                theme === "dark" ? "bg-blue-600" : "bg-gray-300"
               }`}
             >
               <div
                 className={`w-6 h-6 rounded-full bg-white shadow-md transform transition-transform duration-300 ${
-                  isDarkMode ? "translate-x-6" : "translate-x-0"
+                  theme === "dark" ? "translate-x-6" : "translate-x-0"
                 }`}
               >
                 <Image
-                  src={isDarkMode ? "/Images/moon.png" : "/Images/sun.png"}
+                  src={theme === "dark" ? "/Images/moon.png" : "/Images/sun.png"}
                   alt="Theme icon"
                   width={16}
                   height={16}
