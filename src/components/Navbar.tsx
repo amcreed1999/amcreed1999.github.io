@@ -54,7 +54,7 @@ const Navbar = () => {
             {["About", "Projects", "Skills", "Contact"].map((item) => (
               <Link
                 key={item}
-                href={`/${item.toLowerCase()}`}
+                href={item === "About" ? "#about" : `/${item.toLowerCase()}`}
                 className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
               >
                 {item}
