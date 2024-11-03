@@ -47,9 +47,8 @@ const skillLogos: SkillLogo[] = [
   { name: "Matlab", imageUrl: "/Images/Matlab_Logo.png" },
   { name: "LtSpice", imageUrl: "/Images/LTSpice_Logo.png"},
   { name: "Lora", imageUrl: "/Images/Lora_Logo.png"},
-  { name: "FlutterFlow", imageUrl: "/Images/FlutterFlow_Logo.png"}
-
-
+  { name: "FlutterFlow", imageUrl: "/Images/FlutterFlow_Logo.png"},
+  {name: "Typescript", imageUrl:"/Images/Typescript_Logo.png"}
 
 
   // Add more skills here
@@ -57,10 +56,14 @@ const skillLogos: SkillLogo[] = [
 
 // First, let's create a base size that scales with screen size
 const getBaseSize = () => {
-  if (typeof window === 'undefined') return 64; // Default for SSR
+  if (typeof window === 'undefined') return 48; // Default for SSR
   const vw = window.innerWidth;
-  if (vw < 640) return 48; // sm
-  if (vw < 1024) return 64; // md/lg
+  const vh = window.innerHeight;
+  
+  // Scale based on both viewport width and height
+  if (vw < 640 || vh < 640) return 32; // small screens
+  if (vw < 1024 || vh < 768) return 48; // medium screens
+  if (vw < 1536 || vh < 1024) return 64; // large screens
   return 80; // xl and above
 };
 
@@ -89,7 +92,7 @@ const logoScales: { [key: string]: number } = {
   // Add more logos that need scaling
 };
 
-const MIN_SPEED = 0.75; // Adjust this value to set minimum speed
+const MIN_SPEED = 0.5; // Adjust this value to set minimum speed
 const DEFAULT_SIZE = 64;
 
 const FloatingSkillsBackground: React.FC = () => {
@@ -110,6 +113,13 @@ const FloatingSkillsBackground: React.FC = () => {
 
   // Initialize sizes and start animation after mount
   useEffect(() => {
+    const handleResize = () => {
+      setBaseSize(getBaseSize());
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Initial size set
+
     setBaseSize(getBaseSize());
     
     const animate = () => {
@@ -174,7 +184,7 @@ const FloatingSkillsBackground: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-gray-100 border-2 border-blue-500 bg-white">
+    <section className="relative w-full h-[50vh] bg-gray-100 border-2 p-2 border-blue-500 bg-white z-0">
       {skillLogos.map((logo, index) => (
         <div
           key={`skill-${index}`}
