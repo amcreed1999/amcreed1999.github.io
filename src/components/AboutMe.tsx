@@ -2,14 +2,14 @@ import Image from 'next/image';
 
 const steps = [
   {
-    icon: '/icons/checklist.svg',
-    title: 'Pick a Fundraiser',
-    description: 'Choose one of the fundraisers available on our platform and start raising money for your club effortlessly.'
+    icon: '/Images/Location.png',
+    title: 'Melbourne',
+    description: 'I have recently moved to Melbourne from Ireland to further my career and experience life in a new country.'
   },
   {
-    icon: '/icons/community.svg',
-    title: 'Community',
-    description: 'Spread the word in your community to gain as much support and traction as possible for your fundraiser.'
+    icon: '/Images/Education.png',
+    title: 'Masters',
+    description: 'I have just finished my Masters of Engineering by Research from the Embedded Systems Research Group in UCC, Ireland.'
   },
   {
     icon: '/icons/relax.svg',
@@ -28,7 +28,7 @@ const AboutMe = () => {
     <section className="py-16 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
-          How It Works
+          About Me
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -47,7 +47,7 @@ const AboutMe = () => {
                 />
               </div>
               
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+              <h3 className="text-xl font-bold text-gray-900 mt-5 dark:text-white mb-4">
                 {step.title}
               </h3>
               
