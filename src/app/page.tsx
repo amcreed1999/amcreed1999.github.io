@@ -1,7 +1,6 @@
 import FloatingSkillsBackground from "../components/FloatingSkillsBackground";
 import HeroOverlay from "../components/HeroOverlay";
 import Navbar from "../components/Navbar";
-import Education from "../components/Education";
 import AboutMe from '@/components/AboutMe';
 
 export default function Home() {

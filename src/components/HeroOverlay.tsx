@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const HeroOverlay = () => {
   return (
     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-[#1E3A8A] dark:bg-gray-700 opacity-95 rounded-xl p-8 shadow-2xl backdrop-blur-sm border border-white/10 dark:border-gray-600 motion-safe:animate-fade-in">
@@ -5,7 +7,7 @@ const HeroOverlay = () => {
         {/* Image Container with animation */}
         <div className="w-48 h-48 md:w-64 md:h-64 shadow-lg relative group">
           <div className="absolute inset-0 rounded-lg group-hover:from-blue-400/30 transition-all duration-300"></div>
-          <img
+          <Image
             src="/Images/Avatar.png"
             alt="Profile"
             className="w-full h-full object-cover rounded-lg ring-2 ring-white/20 dark:ring-gray-500 transform motion-safe:group-hover:scale-[1.02] transition-all duration-300"

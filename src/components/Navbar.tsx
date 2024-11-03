@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -74,7 +75,7 @@ const Navbar = () => {
                   isDarkMode ? "translate-x-6" : "translate-x-0"
                 }`}
               >
-                <img
+                <Image
                   src={isDarkMode ? "/Images/moon.png" : "/Images/sun.png"}
                   alt="Theme icon"
                   className="w-4 h-4 mx-auto mt-1.5"
