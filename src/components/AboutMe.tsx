@@ -12,14 +12,14 @@ const steps = [
     description: 'I have just finished my Masters of Engineering by Research from the Embedded Systems Research Group in UCC, Ireland.'
   },
   {
-    icon: '/icons/relax.svg',
-    title: 'Relax',
-    description: 'Sit back and relax. Once the fundraiser starts, we take care of the rest, ensuring a smooth process.'
+    icon: '/Images/IoT.png',
+    title: 'Cloud & IOT',
+    description: 'Designed and Built IOT devices that utilise both AWS and GCP. Showcasing both my software and hardware skills.'
   },
   {
-    icon: '/icons/collect.svg',
-    title: 'Collect',
-    description: 'At the end of the fundraiser, receive all the money you have raised, ready to support your clubs goals.'
+    icon: '/Images/Certificate.png',
+    title: 'Certifications',
+    description: 'Completed courses in VR and AR. Soldering. Welding. 3D Printing. Currently working towards my AWS Cloud Practioner Certification.'
   }
 ];
 
