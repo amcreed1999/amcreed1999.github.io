@@ -2,7 +2,6 @@ import FloatingSkillsBackground from "../components/FloatingSkillsBackground";
 import HeroOverlay from "../components/HeroOverlay";
 import Navbar from "../components/Navbar";
 import AboutMe from '@/components/AboutMe';
-import GitHubDashboard from "@/components/GitHubDashboard";
 import GitHubCommitCalendar from "@/components/GitHubCommitCalendar";
 
 export default function Home() {
