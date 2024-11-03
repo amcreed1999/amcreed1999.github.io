@@ -57,7 +57,7 @@ const Timeline = () => {
     <div className={`py-16 ${isDark ? 'bg-gray-900' : 'bg-white'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className={`text-4xl font-extrabold text-center mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-          My Journey to date
+          My Journey to Date
         </h2>
         
         <div className="relative">

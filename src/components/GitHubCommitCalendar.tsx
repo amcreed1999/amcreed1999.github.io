@@ -9,8 +9,8 @@ const GitHubCommitCalendar = () => {
   const username = 'amcreed1999'; // Replace with your GitHub username
 
   return (
-    <div className={`max-w-7xl py-8 ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
-      <div className="flex justify-center">
+    <div className={`max-w-7xl mx-auto py-8 ${isDarkMode ? 'bg-gray-900' : 'bg-white'} flex justify-center items-center`}>
+      <div className="flex justify-center items-center mx-auto">
         <div className={`p-6 rounded-lg shadow-lg ${isDarkMode ? 'bg-gray-900' : 'bg-white'} transition-colors duration-300`}>
           <h2 className={`text-4xl font-extrabold text-center mb-6 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
             GitHub Commit Calendar
