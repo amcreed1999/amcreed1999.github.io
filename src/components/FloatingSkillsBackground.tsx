@@ -184,7 +184,7 @@ const FloatingSkillsBackground: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-[50vh] bg-gray-100 border-2 p-2 border-blue-500 bg-white z-0">
+    <section className="flex-grow relative w-full h-full bg-gray-100 dark:bg-gray-500 border-2 p-2  bg-white z-0">
       {skillLogos.map((logo, index) => (
         <div
           key={`skill-${index}`}

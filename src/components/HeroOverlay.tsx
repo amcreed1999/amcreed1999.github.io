@@ -1,49 +1,43 @@
 const HeroOverlay = () => {
   return (
-    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-[#1E3A8A] opacity-95 rounded-xl p-8 shadow-2xl backdrop-blur-sm border border-white/10 motion-safe:animate-fade-in">
+    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-[#1E3A8A] dark:bg-gray-700 opacity-95 rounded-xl p-8 shadow-2xl backdrop-blur-sm border border-white/10 dark:border-gray-600 motion-safe:animate-fade-in">
       <div className="flex flex-col md:flex-row items-center gap-8">
         {/* Image Container with animation */}
         <div className="w-48 h-48 md:w-64 md:h-64 shadow-lg relative group">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-transparent rounded-lg 
-                          group-hover:from-blue-400/30 transition-all duration-300"></div>
+          <div className="absolute inset-0 rounded-lg group-hover:from-blue-400/30 transition-all duration-300"></div>
           <img
             src="/Images/Avatar.png"
             alt="Profile"
-            className="w-full h-full object-cover rounded-lg ring-2 ring-white/20 
-                       transform motion-safe:group-hover:scale-[1.02] transition-all duration-300"
+            className="w-full h-full object-cover rounded-lg ring-2 ring-white/20 dark:ring-gray-500 transform motion-safe:group-hover:scale-[1.02] transition-all duration-300"
           />
         </div>
 
         {/* Text Content with staggered animation */}
         <div className="text-center md:text-left space-y-2">
           <div className="space-y-4 motion-safe:animate-fade-in-up">
-            <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight">
+            <h1 className="text-4xl md:text-6xl font-bold text-white dark:text-gray-100 tracking-tight">
               Adam Creed
             </h1>
-            <p className="text-xl md:text-2xl text-blue-200 font-light leading-relaxed">
+            <p className="text-xl md:text-2xl text-blue-200 dark:text-gray-300 font-light leading-relaxed">
               Software Developer & Engineer
             </p>
-            <p className="text-blue-200/80 max-w-md text-sm md:text-base">
+            <p className="text-blue-200/80 dark:text-gray-400 max-w-md text-sm md:text-base">
               Passionate about breaking things in the name of progress.
             </p>
           </div>
           
           {/* Social Links & CTA */}
-          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center md:justify-start 
-                          motion-safe:animate-fade-in-up motion-safe:animate-delay-150">
+          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center md:justify-start motion-safe:animate-fade-in-up motion-safe:animate-delay-150">
             <a 
               href="#contact" 
-              className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-lg 
-                         transition-all duration-300 border border-white/10 hover:border-white/20 
-                         hover:shadow-lg hover:-translate-y-0.5 focus:ring-2 focus:ring-white/20 
-                         focus:outline-none"
+              className="px-6 py-3 bg-white/10 dark:bg-gray-600 hover:bg-white/20 dark:hover:bg-gray-500 text-white dark:text-gray-100 rounded-lg transition-all duration-300 border border-white/10 dark:border-gray-500 hover:border-white/20 dark:hover:border-gray-400 hover:shadow-lg hover:-translate-y-0.5 focus:ring-2 focus:ring-white/20 dark:focus:ring-gray-400 focus:outline-none"
             >
               Contact Me
             </a>
             <div className="flex gap-6">
               <a 
-                href="https://github.com" 
-                className="text-white/80 hover:text-white transition-colors group"
+                href="https://github.com/amcreed1999" 
+                className="text-white/80 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors group"
                 aria-label="GitHub Profile"
               >
                 <svg className="w-6 h-6 transform group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
@@ -51,8 +45,8 @@ const HeroOverlay = () => {
                 </svg>
               </a>
               <a 
-                href="https://linkedin.com" 
-                className="text-white/80 hover:text-white transition-colors group"
+                href="https://www.linkedin.com/in/adam-creed/" 
+                className="text-white/80 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors group"
                 aria-label="LinkedIn Profile"
               >
                 <svg className="w-6 h-6 transform group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
@@ -65,7 +59,7 @@ const HeroOverlay = () => {
       </div>
       
       {/* Enhanced gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/5 rounded-xl -z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/5 dark:from-gray-700/10 dark:via-transparent dark:to-gray-800/5 rounded-xl -z-10"></div>
     </div>
   );
 };
