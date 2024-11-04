@@ -15,17 +15,17 @@ const Footer = () => {
           {/* Fun Message */}
           <div>
             <p className={`text-lg font-medium ${isDark ? 'text-gray-300' : 'text-gray-600'} mb-2`}>
-              🎉 Congratulations! You've made it to the bottom of my portfolio!
+              🎉 Congratulations! You&apos;ve made it to the bottom of my portfolio!
             </p>
             <p className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} mb-4`}>
-              Since you're still here, why not{' '}
+              Since you&apos;re still here, why not{' '}
               <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
                 hire me
               </span>
               ? 😉
             </p>
             <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>
-              I promise I'm more productive than my commit history suggests 🤓
+              I promise I&apos;m more productive than my commit history suggests 🤓
             </p>
           </div>
 
@@ -56,8 +56,7 @@ const Footer = () => {
             <p className={`text-sm ${isDark ? 'text-gray-500' : 'text-gray-400'} italic`}>
               Random fact: This website was built with {' '}
               <span className="font-semibold">Next.js</span>, {' '}
-              <span className="font-semibold">TypeScript</span>, {' '}
-              <span className="font-semibold">Tailwind CSS</span>, and lots of ☕
+              <span className="font-semibold">TypeScript</span>, and lots of ☕
             </p>
           </div>
 

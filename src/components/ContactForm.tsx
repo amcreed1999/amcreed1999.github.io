@@ -13,11 +13,11 @@ const ContactForm = () => {
     
     // Get form data
     const formData = new FormData(e.currentTarget);
-    const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      message: formData.get('message'),
-    };
+    // const data = {
+    //   name: formData.get('name'),
+    //   email: formData.get('email'),
+    //   message: formData.get('message'),
+    // };
 
     try {
       // Replace with your form handling logic
@@ -26,7 +26,7 @@ const ContactForm = () => {
       setFormStatus('sent');
       (e.target as HTMLFormElement).reset();
       setTimeout(() => setFormStatus('idle'), 3000);
-    } catch (error) {
+    } catch {
       setFormStatus('error');
       setTimeout(() => setFormStatus('idle'), 3000);
     }
@@ -37,7 +37,7 @@ const ContactForm = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className={`text-4xl font-extrabold ${isDark ? 'text-white' : 'text-gray-900'} mb-4`}>
-            Let's Connect
+            Let&apos;s Connect
           </h2>
           <p className={`text-lg ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
             Have a question or want to work together? Drop me a message!
