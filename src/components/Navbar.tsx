@@ -31,7 +31,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
-            {["About", "Projects", "Skills", "Contact"].map((item) => (
+            {["About", "Timeline", "Projects", "Skills", "Contact"].map((item) => (
               <Link
                 key={item}
                 href={item === "About" ? "#about" : `/${item.toLowerCase()}`}
