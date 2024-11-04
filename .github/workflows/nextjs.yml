@@ -41,7 +41,7 @@ jobs:
           NEXT_PUBLIC_GITHUB_TOKEN: ${{ secrets.NEXT_PUBLIC_GITHUB_TOKEN }}
         run: |
           npm run build
-          npm run export  # Ensure this exports to 'out' directory for GitHub Pages
+          npm run output   # Ensure this exports to 'out' directory for GitHub Pages
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
