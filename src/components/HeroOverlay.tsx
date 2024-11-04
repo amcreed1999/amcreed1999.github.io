@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const HeroOverlay = () => {
   return (  
-    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-gray-100 dark:bg-gray-700 opacity-95 rounded-xl p-8 shadow-2xl backdrop-blur-sm border border-white/10 dark:border-gray-600 motion-safe:animate-fade-in sm:w-[80vw] lg:w-auto sm:mt-16 lg:mt-0">
+    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 bg-gray-100 dark:bg-gray-700 opacity-95 rounded-xl p-8 shadow-2xl backdrop-blur-sm border border-white/10 dark:border-gray-600 motion-safe:animate-fade-in sm:w-[80vw] lg:w-auto sm:mt-16 lg:mt-0">
       <div className="flex flex-col md:flex-row items-center gap-8">
         {/* Image Container with animation */}
         <div className="w-48 h-48 md:w-64 md:h-64 relative group">
