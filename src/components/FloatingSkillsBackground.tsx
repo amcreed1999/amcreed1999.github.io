@@ -9,50 +9,252 @@ interface SkillLogo {
 }
 
 const skillLogos: SkillLogo[] = [
-  { name: "Python", imageUrl: "/Images/Python_Logo.png" },
-  { name: "Javascript", imageUrl: "/Images/JavaScript.png" },
-  { name: "STM", imageUrl: "/Images/STM_Logo.png" },
-  { name: "STMCube", imageUrl: "/Images/STM32_Cube.png" },
-  { name: "Swift", imageUrl: "/Images/Swift.png" },
-  { name: "SwiftUI", imageUrl: "/Images/SwiftUI.png" },
-  { name: "Flutter", imageUrl: "/Images/Flutter.png" },
-  { name: "C", imageUrl: "/Images/C_Logo.png" },
-  { name: "C++", imageUrl: "/Images/C++_Logo.png" },
-  { name: "C#", imageUrl: "/Images/C_Sharp_Logo.png" },
-  { name: "Latex", imageUrl: "/Images/Latex_Logo.png" },
-  { name: "HTML", imageUrl: "/Images/HTML_Logo.png" },
-  { name: "NextJS", imageUrl: "/Images/NextJS_Logo.png" },
-  { name: "React", imageUrl: "/Images/React_Logo.png" },
-  { name: "Tailwind", imageUrl: "/Images/Tailwind_CSS_Logo.png" },
-  { name: "GitHub", imageUrl: "/Images/GitHub_Logo.png" },
-  { name: "Git", imageUrl: "/Images/Git_Logo.png" },
-  { name: "Firebase", imageUrl: "/Images/Firebase_Logo.png" },
-  { name: "Figma", imageUrl: "/Images/Figma_Logo.png" },
-  { name: "Sketch", imageUrl: "/Images/Sketch_Logo.png" },
-  { name: "Google Cloud", imageUrl: "/Images/Google_Cloud_Logo.png" },
-  { name: "AWS", imageUrl: "/Images/AWS_Logo.png" },
-  { name: "Linux", imageUrl: "/Images/Linux_Logo.png" },
-  { name: "Heroku", imageUrl: "/Images/Heroku_Logo.png" },
-  { name: "Vercel", imageUrl: "/Images/Vercel_Logo.png" },
-  { name: "Stripe", imageUrl: "/Images/Stripe_Logo.png" },
-  { name: "Mailgun", imageUrl: "/Images/Mailgun_Logo.png" },
-  { name: "WordPress", imageUrl: "/Images/WordPress_Logo.png" },
-  { name: "Qualcomm Spaces", imageUrl: "/Images/Qualcomm_Spaces_Logo.png" },
-  { name: "Unity", imageUrl: "/Images/Unity_Logo.png" },
-  { name: "CSS", imageUrl: "/Images/CSS_Logo.png" },
-  { name: "Fusion360", imageUrl: "/Images/Fusion360_Logo.png" },
-  { name: "OpenXR", imageUrl: "/Images/OpenXR_Logo.png" },
-  { name: "Powerpoint", imageUrl: "/Images/Powerpoint_Logo.png" },
-  { name: "Excel", imageUrl: "/Images/Excel_Logo.png" },
-  { name: "Keynote", imageUrl: "/Images/Keynote_Logo.png" },
-  { name: "Photoshop", imageUrl: "/Images/Photoshop_Logo.png" },
-  { name: "Matlab", imageUrl: "/Images/Matlab_Logo.png" },
-  { name: "LtSpice", imageUrl: "/Images/LTSpice_Logo.png"},
-  { name: "Lora", imageUrl: "/Images/Lora_Logo.png"},
-  { name: "FlutterFlow", imageUrl: "/Images/FlutterFlow_Logo.png"},
-  {name: "Typescript", imageUrl:"/Images/Typescript_Logo.png"}
-
-
+  { 
+    name: "Python", 
+    imageUrl: "/Images/Python_Logo.png",
+    learnedAt: "University",
+    description: "Used extensively in AI, machine learning projects and data analysis."
+  },
+  { 
+    name: "Javascript", 
+    imageUrl: "/Images/JavaScript.png",
+    learnedAt: "Self-taught",
+    description: "Developed dynamic web applications and interactive UI components for my final year project."
+  },
+  { 
+    name: "STM", 
+    imageUrl: "/Images/STM_Logo.png",
+    learnedAt: "University",
+    description: "Worked on embedded systems and microcontroller programming. Tutored for 2 years."
+  },
+  { 
+    name: "STMCube", 
+    imageUrl: "/Images/STM32_Cube.png",
+    learnedAt: "University",
+    description: "Worked on embedded systems and microcontroller programming. Tutored for 2 years."
+  },
+  { 
+    name: "Swift", 
+    imageUrl: "/Images/Swift.png",
+    learnedAt: "Self-taught",
+    description: "Developed iOS applications with Swift."
+  },
+  { 
+    name: "SwiftUI", 
+    imageUrl: "/Images/SwiftUI.png",
+    learnedAt: "Self-taught",
+    description: "Built modern iOS interfaces using SwiftUI. Won best Idea at a StartUp Competition."
+  },
+  { 
+    name: "Flutter", 
+    imageUrl: "/Images/Flutter.png",
+    learnedAt: "Self-taught",
+    description: "Developed my Start Up idea further, still on going."
+  },
+  { 
+    name: "C", 
+    imageUrl: "/Images/C_Logo.png",
+    learnedAt: "University",
+    description: "Fundamental language for understanding low-level programming."
+  },
+  { 
+    name: "C++", 
+    imageUrl: "/Images/C++_Logo.png",
+    learnedAt: "University",
+    description: "Used in Embedded Systems modules. Tutored for 2 years."
+  },
+  { 
+    name: "C#", 
+    imageUrl: "/Images/C_Sharp_Logo.png",
+    learnedAt: "University",
+    description: "First coding language I learned. Used in Unity for my Masters Project."
+  },
+  { 
+    name: "Latex", 
+    imageUrl: "/Images/Latex_Logo.png",
+    learnedAt: "Self-taught",
+    description: "Document preparation system for high-quality typesetting. Used for my Masters Project."
+  },
+  { 
+    name: "HTML", 
+    imageUrl: "/Images/HTML_Logo.png",
+    learnedAt: "Self-taught",
+    description: "Learnt with JS and CSS to create a Dashboard for my Final Year Project."
+  },
+  { 
+    name: "NextJS", 
+    imageUrl: "/Images/NextJS_Logo.png",
+    learnedAt: "Self-taught",
+    description: "Built server-side rendered React applications. Used to raise money for my local club."
+  },
+  { 
+    name: "React", 
+    imageUrl: "/Images/React_Logo.png",
+    learnedAt: "Self-taught",
+    description: "Built a few websites, including this one."
+  },
+  { 
+    name: "Tailwind", 
+    imageUrl: "/Images/Tailwind_CSS_Logo.png",
+    learnedAt: "Self-taught",
+    description: "Learnt when trying to make my own website."
+  },
+  { 
+    name: "GitHub", 
+    imageUrl: "/Images/GitHub_Logo.png",
+    learnedAt: "Self-taught",
+    description: "Learn when doing my Masters, need a quick way to change between multiple variations of the same thing."
+  },
+  { 
+    name: "Git", 
+    imageUrl: "/Images/Git_Logo.png",
+    learnedAt: "Self-taught",
+    description: "Managed source code versions and branches."
+  },
+  { 
+    name: "Firebase", 
+    imageUrl: "/Images/Firebase_Logo.png",
+    learnedAt: "Self-taught",
+    description: "The backbone of my first attempt at a Start Up."
+  },
+  { 
+    name: "Figma", 
+    imageUrl: "/Images/Figma_Logo.png",
+    learnedAt: "Self-taught",
+    description: "Designed UI/UX prototypes and wireframes for Masters, some websites and also some graphics."
+  },
+  { 
+    name: "Sketch", 
+    imageUrl: "/Images/Sketch_Logo.png",
+    learnedAt: "Self-taught",
+    description: "Created vector graphics and design layouts for Masters, some websites and also my local club."
+  },
+  { 
+    name: "Google Cloud", 
+    imageUrl: "/Images/Google_Cloud_Logo.png",
+    learnedAt: "Self-taught",
+    description: "Mostly when building a Smart Mirror. Made it work with Google Assistant, Photos, Maps, YouTube and more."
+  },
+  { 
+    name: "AWS", 
+    imageUrl: "/Images/AWS_Logo.png",
+    learnedAt: "Self-taught",
+    description: "Final Year Project, hosted a website on AWS that was the dashboard for the Data we gathered. Also used AWS Lambda to process the data, AWS IOT to collect it and AWS S3 to store it."
+  },
+  { 
+    name: "Linux", 
+    imageUrl: "/Images/Linux_Logo.png",
+    learnedAt: "University",
+    description: "A few modules, used a lot in Raspberry Pi projects, running local servers and databases with some Large Language Models."
+  },
+  { 
+    name: "Heroku", 
+    imageUrl: "/Images/Heroku_Logo.png",
+    learnedAt: "Self-taught",
+    description: "Deployed and managed applications on Heroku platform. Have my second Startup Idea running on it."
+  },
+  { 
+    name: "Vercel", 
+    imageUrl: "/Images/Vercel_Logo.png",
+    learnedAt: "Self-taught",
+    description: "My go to for deploying websites, easy to use and has a lot of features. Have three websites running on it."
+  },
+  { 
+    name: "Stripe", 
+    imageUrl: "/Images/Stripe_Logo.png",
+    learnedAt: "Self-taught",
+    description: "Successfully integrated Stripe into different projects to process payments. Have taken over €100K in payments."
+  },
+  { 
+    name: "Mailgun", 
+    imageUrl: "/Images/Mailgun_Logo.png",
+    learnedAt: "Self-taught",
+    description: "Used in some of my websites to send emails. "
+  },
+  { 
+    name: "WordPress", 
+    imageUrl: "/Images/WordPress_Logo.png",
+    learnedAt: "Self-taught",
+    description: "Built my first website on it. Moved away from it when I started learning React."
+  },
+  { 
+    name: "Qualcomm Spaces", 
+    imageUrl: "/Images/Qualcomm_Spaces_Logo.png",
+    learnedAt: "Self-taught",
+    description: "Worked on AR/VR projects using Qualcomm Spaces for my Masters Project."
+  },
+  { 
+    name: "Unity", 
+    imageUrl: "/Images/Unity_Logo.png",
+    learnedAt: "Self-taught",
+    description: "Used extensively in my Masters Project to create a 3D environment to visualise EEG data."
+  },
+  { 
+    name: "CSS", 
+    imageUrl: "/Images/CSS_Logo.png",
+    learnedAt: "Self-taught",
+    description: "Styled the dashboard for my Final Year Project. Moved away from it when I started learning Tailwind."
+  },
+  { 
+    name: "Fusion360", 
+    imageUrl: "/Images/Fusion360_Logo.png",
+    learnedAt: "Self-taught",
+    description: "Designed 3D model of my Smart Mirror before building it. Some other useful things too."
+  },
+  { 
+    name: "OpenXR", 
+    imageUrl: "/Images/OpenXR_Logo.png",
+    learnedAt: "Self-taught",
+    description: "Developed cross-platform VR applications. Used for my Masters Project to ensure it worked on all headsets."
+  },
+  { 
+    name: "Powerpoint", 
+    imageUrl: "/Images/Powerpoint_Logo.png",
+    learnedAt: "My Father",
+    description: "A must for any career, used so many times I have lost count."
+  },
+  { 
+    name: "Excel", 
+    imageUrl: "/Images/Excel_Logo.png",
+    learnedAt: "My Father",
+    description: "A non-negotiable for any career. Macros, VBA, Pivot Tables, Look ups, Charts, Graphs, you name it."
+  },
+  { 
+    name: "Photoshop", 
+    imageUrl: "/Images/Photoshop_Logo.png",
+    learnedAt: "Self-taught",
+    description: "Hobbyist, used for some graphics and photoshopping in conjunction with Lightroom."
+  },
+  { 
+    name: "Matlab", 
+    imageUrl: "/Images/Matlab_Logo.png",
+    learnedAt: "University",
+    description: "Second language I learned, used in conjunction with Simulink to model and simulate systems."
+  },
+  { 
+    name: "LtSpice", 
+    imageUrl: "/Images/LTSpice_Logo.png",
+    learnedAt: "University",
+    description: "Simulated electronic circuits and systems. "
+  },
+  { 
+    name: "Lora", 
+    imageUrl: "/Images/Lora_Logo.png",
+    learnedAt: "Work Experience",
+    description: "Implemented IoT solutions using LoRa technology. Used in my final year project to collect data from sensors and send it to the cloud."
+  },
+  { 
+    name: "FlutterFlow", 
+    imageUrl: "/Images/FlutterFlow_Logo.png",
+    learnedAt: "Self-taught",
+    description: "Built mobile app for my Start Up idea. Still on going."
+  },
+  { 
+    name: "Typescript", 
+    imageUrl: "/Images/Typescript_Logo.png",
+    learnedAt: "Self-taught",
+    description: "Used in some of my websites to add some extra functionality."
+  }
   // Add more skills here
 ];
 
