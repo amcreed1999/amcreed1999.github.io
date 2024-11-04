@@ -82,7 +82,7 @@ const GitHubSummary = () => {
   return (
     <div className={`py-12 ${isDark ? 'bg-gray-900' : 'bg-white'}`}>
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className={`text-2xl font-bold text-center mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+        <h2 className={`text-3xl sm:text-4xl font-extrabold text-center mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>
           GitHub Activity
         </h2>
         

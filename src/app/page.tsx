@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import AboutMe from '@/components/AboutMe';
 import GitHubSummary from "@/components/GitHubSummary";
 import Projects from "@/components/Projects";
+import Testimonials from "@/components/Testimonials";
 import Timeline from "@/components/Timeline";
 import Footer from "@/components/Footer";
 
@@ -22,6 +23,7 @@ export default function Home() {
         <GitHubSummary />
       </section>
       <Projects />
+      <Testimonials />
       <section id="timeline">
         <Timeline />
       </section>
