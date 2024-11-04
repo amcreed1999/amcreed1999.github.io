@@ -69,7 +69,7 @@ const Testimonials = () => {
             >
               <div className="flex items-start space-x-4">
                 <div className={`text-4xl ${isDark ? 'text-blue-400' : 'text-blue-500'}`}>
-                  "
+                  &quot;
                 </div>
                 
                 <div className="flex-1">
@@ -80,7 +80,7 @@ const Testimonials = () => {
                   </p>
                   
                   <div className="flex items-center">
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden">
+                    <div className="relative w-12 h-12 rounded-full overflow-hidden">
                       <Image
                         src={testimonial.image}
                         alt={testimonial.name}
@@ -101,10 +101,8 @@ const Testimonials = () => {
                         {testimonial.role} at {testimonial.company}
                       </p>
                       <a href={testimonial.linkedin} target="_blank" rel="noopener noreferrer" className="ml-2">
-                        <Image
+                        <img
                           src="/Images/LinkedIn.png"
-                          width={16}
-                          height={16}
                           alt="LinkedIn"
                           className="w-6 h-6 hover:opacity-75 transition-opacity"
                         />
