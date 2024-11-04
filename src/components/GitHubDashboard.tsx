@@ -25,7 +25,7 @@ const GitHubDashboard = () => {
   const [stats, setStats] = useState<GitHubStats | null>(null);
   const [repos, setRepos] = useState<Repository[]>([]);
   const [loading, setLoading] = useState(true);
-  const username = 'YourGitHubUsername'; // Replace with your GitHub username
+  const username = 'amcreed1999'; // Replace with your GitHub username
 
   useEffect(() => {
     const fetchGitHubData = async () => {
@@ -56,7 +56,10 @@ const GitHubDashboard = () => {
       }
     };
 
-    fetchGitHubData();
+    // Ensure this runs only on the client
+    if (typeof window !== 'undefined') {
+      fetchGitHubData();
+    }
   }, []);
 
   if (loading) {

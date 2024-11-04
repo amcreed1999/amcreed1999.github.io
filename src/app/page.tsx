@@ -3,6 +3,7 @@ import HeroOverlay from "../components/HeroOverlay";
 import Navbar from "../components/Navbar";
 import AboutMe from '@/components/AboutMe';
 import GitHubCommitCalendar from "@/components/GitHubCommitCalendar";
+import GitHubSummary from "@/components/GitHubSummary";
 import Timeline from "@/components/Timeline";
 import Footer from "@/components/Footer";
 
@@ -15,7 +16,10 @@ export default function Home() {
         <HeroOverlay />
       </div>
       <AboutMe />
-      <GitHubCommitCalendar />
+      <GitHubSummary />
+      <div className="hidden md:block">
+        <GitHubCommitCalendar />
+      </div>
       <Timeline />
       <Footer />
     </main>

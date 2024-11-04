@@ -42,8 +42,8 @@ const timelineData: TimelineItem[] = [
   },
   {
     date: "June 2021 - October 2024",
-    title: "Receptionist at Local Gym",
-    description: "Life is not cheap, so I worked there to pay my way through university. The IT systems were not up to date, so I built some automations to make the lives of the staff easier.",
+    title: "Weekend Manager at Local Gym",
+    description: "Life is not cheap, so I worked there to pay my way through university. The IT systems were not up to date, so I built some automations to make the lives of the staff easier. Day to Day business work was not the most exciting, but it taught me a lot about communication and teamwork.",
     tags: ["Python", "Excel", "Communication Skills"]
   },
   // Add more timeline items as needed
@@ -54,19 +54,17 @@ const Timeline = () => {
   const isDark = theme === 'dark';
 
   return (
-    <div className={`py-16 ${isDark ? 'bg-gray-900' : 'bg-white'}`}>
+    <div className={`py-8 sm:py-16 ${isDark ? 'bg-gray-900' : 'bg-white'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className={`text-4xl font-extrabold text-center mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+        <h2 className={`text-3xl sm:text-4xl font-extrabold text-center mb-8 sm:mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>
           My Journey to Date
         </h2>
         
         <div className="relative">
-          {/* Updated Vertical Line to match HeroOverlay theme */}
+          {/* Vertical line */}
           <div 
-            className={`absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 ${
-              isDark 
-                ? 'bg-gradient-to-b from-blue-500/50 via-transparent to-blue-600/30' 
-                : 'bg-gradient-to-b from-blue-500/70 via-blue-400/50 to-blue-600/40'
+            className={`absolute left-4 sm:left-1/2 transform sm:-translate-x-1/2 h-full w-0.5 ${
+              isDark ? 'bg-blue-500/30' : 'bg-blue-500/20'
             }`}
             aria-hidden="true"
           />
@@ -75,16 +73,17 @@ const Timeline = () => {
             {timelineData.map((item, index) => (
               <div 
                 key={index} 
-                className={`mb-12 flex items-center ${
-                  index % 2 === 0 ? 'flex-row-reverse' : ''
-                }`}
+                className={`mb-8 sm:mb-12 flex flex-col sm:flex-row items-start sm:items-center
+                  ${index % 2 === 0 ? 'sm:flex-row-reverse' : ''}`}
               >
                 {/* Content */}
-                <div className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-8' : 'pl-8'}`}>
+                <div className={`pl-12 sm:pl-0 w-full sm:w-5/12 ${
+                  index % 2 === 0 ? 'sm:text-right sm:pr-8' : 'sm:pl-8'
+                }`}>
                   <div 
-                    className={`p-6 rounded-lg shadow-lg ${
+                    className={`p-4 sm:p-6 rounded-lg shadow-lg ${
                       isDark ? 'bg-gray-800' : 'bg-white'
-                    } hover:shadow-xl transition-shadow duration-300 border border-white/10 dark:border-gray-600`}
+                    } hover:shadow-xl transition-shadow duration-300`}
                   >
                     <span className={`text-sm font-semibold ${
                       isDark ? 'text-blue-400' : 'text-blue-600'
@@ -120,9 +119,9 @@ const Timeline = () => {
                   </div>
                 </div>
 
-                {/* Updated Circle with matching theme */}
+                {/* Circle marker */}
                 <div 
-                  className={`absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full ${
+                  className={`absolute left-4 sm:left-1/2 transform -translate-x-1/2 w-3 h-3 sm:w-4 sm:h-4 rounded-full ${
                     isDark
                       ? 'bg-blue-500 border-2 border-gray-800'
                       : 'bg-blue-500 border-2 border-white'
