@@ -4,6 +4,8 @@ import React, { useEffect, useRef, useState } from "react";
 interface SkillLogo {
   name: string;
   imageUrl: string;
+  learnedAt?: string; // Where the skill was learned
+  description?: string; // Optional description of your experience
 }
 
 const skillLogos: SkillLogo[] = [
@@ -100,6 +102,7 @@ const FloatingSkillsBackground: React.FC = () => {
   const animationFrameRef = useRef<number>();
   const [isPositioned, setIsPositioned] = useState(false);
   const [baseSize, setBaseSize] = useState(DEFAULT_SIZE);
+  const [showSkillsPopup, setShowSkillsPopup] = useState(false);
   const velocities = useRef<Array<{ x: number; y: number }>>(
     skillLogos.map(() => {
       const angle = Math.random() * 2 * Math.PI;
@@ -205,6 +208,78 @@ const FloatingSkillsBackground: React.FC = () => {
           }}
         />
       ))}
+
+      {/* Skills Button */}
+      <button
+        onClick={() => setShowSkillsPopup(true)}
+        className="fixed bottom-4 right-4 bg-blue-500 hover:bg-blue-600 text-white rounded-full p-3 shadow-lg transition-transform hover:scale-105 z-[50]"
+        aria-label="View Skills"
+      >
+        <svg 
+          className="w-6 h-6" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          <path 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeWidth={2} 
+            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" 
+          />
+        </svg>
+      </button>
+
+      {/* Skills Popup */}
+      {showSkillsPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-[100]">
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-4xl w-full max-h-[80vh] overflow-y-auto relative">
+            <div className="sticky top-0 p-6 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center bg-white dark:bg-gray-800">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                Skills & Technologies
+              </h2>
+              <button
+                onClick={() => setShowSkillsPopup(false)}
+                className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+            <div className="p-6 overflow-y-auto max-h-[calc(80vh-8rem)]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                {skillLogos.map((skill, index) => (
+                  <div
+                    key={index}
+                    className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6 flex flex-col items-center"
+                  >
+                    <div className="w-20 h-20 relative mb-4">
+                      <img
+                        src={skill.imageUrl}
+                        alt={skill.name}
+                        className="object-contain w-full h-full"
+                      />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                      {skill.name}
+                    </h3>
+                    <p className="text-sm text-blue-600 dark:text-blue-400 mb-2">
+                      {skill.learnedAt}
+                    </p>
+                    {skill.description && (
+                      <p className="text-sm text-gray-600 dark:text-gray-300 text-center">
+                        {skill.description}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
