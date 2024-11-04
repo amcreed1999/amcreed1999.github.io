@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from 'react';
 import { useTheme } from "next-themes";
+import GitHubCommitCalendar from './GitHubCommitCalendar';
 
 interface GitHubStats {
   publicRepos: number;
@@ -79,7 +80,7 @@ const GitHubSummary = () => {
   ];
 
   return (
-    <div className={`md:hidden py-12 ${isDark ? 'bg-gray-900' : 'bg-white'}`}>
+    <div className={`py-12 ${isDark ? 'bg-gray-900' : 'bg-white'}`}>
       <div className="max-w-7xl mx-auto px-4">
         <h2 className={`text-2xl font-bold text-center mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>
           GitHub Activity
@@ -93,7 +94,7 @@ const GitHubSummary = () => {
                 isDark ? 'bg-gray-800' : 'bg-gray-50'
               } border ${
                 isDark ? 'border-gray-700' : 'border-gray-200'
-              } ${item.label === 'Contributions this year' ? 'col-span-2' : ''}`}
+              } ${item.label === 'Contributions this year' ? 'col-span-2 sm:col-span-2 md:col-span-2 lg:hidden xl:hidden' : ''}`}
             >
               <div className={`text-2xl font-bold mb-1 ${
                 isDark ? 'text-blue-400' : 'text-blue-600'
@@ -123,6 +124,10 @@ const GitHubSummary = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>
           </a>
+        </div>
+
+        <div className="hidden lg:block mt-12">
+          <GitHubCommitCalendar />
         </div>
       </div>
     </div>

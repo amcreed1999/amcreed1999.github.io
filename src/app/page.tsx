@@ -2,7 +2,6 @@ import FloatingSkillsBackground from "../components/FloatingSkillsBackground";
 import HeroOverlay from "../components/HeroOverlay";
 import Navbar from "../components/Navbar";
 import AboutMe from '@/components/AboutMe';
-import GitHubCommitCalendar from "@/components/GitHubCommitCalendar";
 import GitHubSummary from "@/components/GitHubSummary";
 import Projects from "@/components/Projects";
 import Timeline from "@/components/Timeline";
@@ -22,9 +21,6 @@ export default function Home() {
       <section id="summary">
         <GitHubSummary />
       </section>
-      <div className="hidden md:block" id="calendar">
-        <GitHubCommitCalendar />
-      </div>
       <Projects />
       <section id="timeline">
         <Timeline />
