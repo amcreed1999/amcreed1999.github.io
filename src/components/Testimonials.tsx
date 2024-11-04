@@ -1,7 +1,6 @@
 "use client";
 import { useTheme } from "next-themes";
-import Image from "next/image";
-import LinkedInLogo from '/public/images/LinkedIn.png'; // Import the LinkedIn logo
+import Image from "next/image";// Import the LinkedIn logo
 
 interface Testimonial {
   name: string;
@@ -103,7 +102,9 @@ const Testimonials = () => {
                       </p>
                       <a href={testimonial.linkedin} target="_blank" rel="noopener noreferrer" className="ml-2">
                         <Image
-                          src={LinkedInLogo}
+                          src="/Images/LinkedIn.png"
+                          width={16}
+                          height={16}
                           alt="LinkedIn"
                           className="w-6 h-6 hover:opacity-75 transition-opacity"
                         />
