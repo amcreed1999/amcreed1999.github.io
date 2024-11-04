@@ -20,13 +20,13 @@ const HeroOverlay = () => {
         <div className="text-center md:text-left space-y-2">
           <div className="space-y-6 motion-safe:animate-fade-in-up">
             <h1 className="text-5xl md:text-7xl font-extrabold text-primary dark:text-gray-100 tracking-tight leading-tight">
-              Adam Creed
+              Adam Creed 🚀
             </h1>
             <p className="text-2xl md:text-3xl text-blue-600 dark:text-gray-300 font-light leading-relaxed">
-              Software Developer & Engineer
+              Software Developer & Engineer 💻
             </p>
             <p className="text-blue-600/80 dark:text-gray-400 max-w-lg text-base md:text-lg leading-snug">
-              Passionate about breaking things in the name of progress. To check out all my skills behind me, push the button in the bottom right.
+              Passionate about breaking things in the name of progress 🔧. To check out all my skills behind me, push the button in the bottom right 👇.
             </p>
           </div>
           

@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import AboutMe from '@/components/AboutMe';
 import GitHubCommitCalendar from "@/components/GitHubCommitCalendar";
 import GitHubSummary from "@/components/GitHubSummary";
+import Projects from "@/components/Projects";
 import Timeline from "@/components/Timeline";
 import Footer from "@/components/Footer";
 
@@ -24,6 +25,7 @@ export default function Home() {
       <div className="hidden md:block" id="calendar">
         <GitHubCommitCalendar />
       </div>
+      <Projects />
       <section id="timeline">
         <Timeline />
       </section>
