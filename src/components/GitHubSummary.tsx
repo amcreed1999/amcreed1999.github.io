@@ -3,12 +3,9 @@ import { useEffect, useState } from 'react';
 import { useTheme } from "next-themes";
 
 interface GitHubStats {
-  totalCommits: number;
   publicRepos: number;
   privateRepos: number;
   totalContributions: number;
-  followers: number;
-  following: number;
 }
 
 const GitHubSummary = () => {
@@ -21,7 +18,7 @@ const GitHubSummary = () => {
     const fetchGitHubStats = async () => {
       try {
         const username = 'amcreed1999';
-        const token = 'YOUR_GITHUB_PERSONAL_ACCESS_TOKEN'; // Replace with your token
+        const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
 
         const query = `
           query {
@@ -35,12 +32,6 @@ const GitHubSummary = () => {
                 totalCount
               }
               publicRepos: repositories(privacy: PUBLIC) {
-                totalCount
-              }
-              followers {
-                totalCount
-              }
-              following {
                 totalCount
               }
             }
@@ -59,12 +50,9 @@ const GitHubSummary = () => {
         const { data } = await response.json();
 
         setStats({
-          totalCommits: data.user.contributionsCollection.contributionCalendar.totalContributions,
           publicRepos: data.user.publicRepos.totalCount,
           privateRepos: data.user.repositories.totalCount,
           totalContributions: data.user.contributionsCollection.contributionCalendar.totalContributions,
-          followers: data.user.followers.totalCount,
-          following: data.user.following.totalCount,
         });
       } catch (error) {
         console.error('Error fetching GitHub stats:', error);
@@ -87,10 +75,7 @@ const GitHubSummary = () => {
   const statItems = [
     { label: 'Public Repos', value: stats?.publicRepos || 0 },
     { label: 'Private Repos', value: stats?.privateRepos || 0 },
-    { label: 'Total Commits', value: stats?.totalCommits || 0 },
-    { label: 'Contributions', value: stats?.totalContributions || 0 },
-    { label: 'Followers', value: stats?.followers || 0 },
-    { label: 'Following', value: stats?.following || 0 },
+    { label: 'Contributions this year', value: stats?.totalContributions || 0 },
   ];
 
   return (
@@ -104,11 +89,11 @@ const GitHubSummary = () => {
           {statItems.map((item, index) => (
             <div 
               key={index}
-              className={`p-4 rounded-lg ${
+              className={`p-4 rounded-lg text-center ${
                 isDark ? 'bg-gray-800' : 'bg-gray-50'
               } border ${
                 isDark ? 'border-gray-700' : 'border-gray-200'
-              }`}
+              } ${item.label === 'Contributions this year' ? 'col-span-2' : ''}`}
             >
               <div className={`text-2xl font-bold mb-1 ${
                 isDark ? 'text-blue-400' : 'text-blue-600'
@@ -144,4 +129,4 @@ const GitHubSummary = () => {
   );
 };
 
-export default GitHubSummary; 
+export default GitHubSummary;
