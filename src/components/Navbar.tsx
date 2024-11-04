@@ -34,7 +34,7 @@ const Navbar = () => {
             {["About", "Timeline", "Projects", "Skills", "Contact"].map((item) => (
               <Link
                 key={item}
-                href={item === "About" ? "#about" : `/${item.toLowerCase()}`}
+                href={item === "Contact" ? "#contact" : `#${item.toLowerCase()}`}
                 className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
               >
                 {item}
@@ -91,10 +91,10 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900">
-            {["About", "Projects", "Skills", "Contact"].map((item) => (
+            {["About", "Timeline", "Projects", "Skills", "Contact"].map((item) => (
               <Link
                 key={item}
-                href={`/${item.toLowerCase()}`}
+                href={item === "Contact" ? "#contact" : `#${item.toLowerCase()}`}
                 className="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
               >
                 {item}

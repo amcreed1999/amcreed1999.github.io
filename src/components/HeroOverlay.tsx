@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const HeroOverlay = () => {
   return (  
-    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 bg-gray-100 dark:bg-gray-700 opacity-95 rounded-xl p-8 shadow-2xl backdrop-blur-sm border border-white/10 dark:border-gray-600 motion-safe:animate-fade-in sm:w-[80vw] lg:w-auto sm:mt-16 lg:mt-0">
+    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-gray-100 dark:bg-gray-700 opacity-95 rounded-xl p-8 shadow-2xl backdrop-blur-sm border border-white/10 dark:border-gray-600 motion-safe:animate-fade-in sm:w-[80vw] lg:w-auto sm:mt-16 lg:mt-0">
       <div className="flex flex-col md:flex-row items-center gap-8">
         {/* Image Container with animation */}
         <div className="w-48 h-48 md:w-64 md:h-64 relative group">
@@ -12,21 +12,21 @@ const HeroOverlay = () => {
             width={256}
             height={256}
             alt="Profile"
-            className="w-full h-full object-cover rounded-lg transform motion-safe:group-hover:scale-[1.02] transition-all duration-300"
+            className="w-full h-full object-cover rounded-lg transform transition-all duration-300"
           />
         </div>
 
         {/* Text Content with staggered animation */}
         <div className="text-center md:text-left space-y-2">
-          <div className="space-y-4 motion-safe:animate-fade-in-up">
-            <h1 className="text-4xl md:text-6xl font-bold text-primary dark:text-gray-100 tracking-tight">
+          <div className="space-y-6 motion-safe:animate-fade-in-up">
+            <h1 className="text-5xl md:text-7xl font-extrabold text-primary dark:text-gray-100 tracking-tight leading-tight">
               Adam Creed
             </h1>
-            <p className="text-xl md:text-2xl text-blue-600 dark:text-gray-300 font-light leading-relaxed">
+            <p className="text-2xl md:text-3xl text-blue-600 dark:text-gray-300 font-light leading-relaxed">
               Software Developer & Engineer
             </p>
-            <p className="text-blue-600/80 dark:text-gray-400 max-w-md text-sm md:text-base">
-              Passionate about breaking things in the name of progress. Check out all my skills behind me. 
+            <p className="text-blue-600/80 dark:text-gray-400 max-w-lg text-base md:text-lg leading-snug">
+              Passionate about breaking things in the name of progress. To check out all my skills behind me, push the button in the bottom right.
             </p>
           </div>
           

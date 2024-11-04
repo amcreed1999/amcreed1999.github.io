@@ -11,16 +11,22 @@ export default function Home() {
   return (
     <main className="flex flex-col min-h-screen">
       <Navbar />
-      <div className="relative h-screen pt-16">
+      <div className="relative h-screen pt-16" id="hero">
         <FloatingSkillsBackground />
         <HeroOverlay />
       </div>
-      <AboutMe />
-      <GitHubSummary />
-      <div className="hidden md:block">
+      <section id="about">
+        <AboutMe />
+      </section>
+      <section id="summary">
+        <GitHubSummary />
+      </section>
+      <div className="hidden md:block" id="calendar">
         <GitHubCommitCalendar />
       </div>
-      <Timeline />
+      <section id="timeline">
+        <Timeline />
+      </section>
       <Footer />
     </main>
   );

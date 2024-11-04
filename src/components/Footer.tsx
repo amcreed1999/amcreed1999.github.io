@@ -7,7 +7,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className={`py-8 sm:py-12 ${isDark ? 'bg-gradient-to-r from-gray-800 to-gray-900' : 'bg-gradient-to-r from-white to-gray-100'} border-t ${isDark ? 'border-gray-700' : 'border-gray-300'}`}>
+    <footer id="contact" className={`py-8 sm:py-12 ${isDark ? 'bg-gradient-to-r from-gray-800 to-gray-900' : 'bg-gradient-to-r from-white to-gray-100'} border-t ${isDark ? 'border-gray-700' : 'border-gray-300'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-6 sm:gap-8 text-center">
           {/* Fun Message */}
