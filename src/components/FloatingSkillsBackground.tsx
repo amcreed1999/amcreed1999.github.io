@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 interface SkillLogo {
   name: string;
@@ -458,7 +459,7 @@ const FloatingSkillsBackground: React.FC = () => {
                     className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6 flex flex-col items-center"
                   >
                     <div className="w-20 h-20 relative mb-4">
-                      <img
+                      <Image
                         src={skill.imageUrl}
                         alt={skill.name}
                         className="object-contain w-full h-full"

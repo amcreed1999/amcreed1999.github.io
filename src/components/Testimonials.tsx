@@ -25,7 +25,7 @@ const testimonials: Testimonial[] = [
     role: "Research Student",
     company: "University College Cork",
     image: "https://media.licdn.com/dms/image/v2/D4E03AQHaTPWayAN2vA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1700249993204?e=1736380800&v=beta&t=LJbifuZu8qBKNAKMHUTIZW6DDkWfUpsghlXNzwRrRxE",
-    quote: "As a teaching assistant for our embedded systems module, Adam showed great patience and skill in helping students grasp complex concepts. His technical knowledge and communication abilities are outstanding.",
+    quote: "Adam is an innovative and creative thinker, bringing a unique commitment to every project he undertakes. His focus on finding solutions, no matter the obstacles, is unmatched. He’s the only person I know who would willingly stand in a peatland in the rain for 12 hours with me, determined to debug and deploy a successful solution. His drive and passion for technical excellence in real-world settings make him an invaluable problem-solver.",
     linkedin: "https://www.linkedin.com/in/leah-twomey/"
   },
   {

@@ -15,56 +15,71 @@ interface Project {
   challenges?: string[];
   outcomes?: string[];
   images?: string[];
+  captions?: string[];
+  youtube?: string;
 }
 
 const projects: Project[] = [
   {
-    title: "EEG VR Visualisation",
+    title: "Masters Project: EEG VR Visualisation",
     description: "A Virtual Reality environment that allows clinicians to visualise and interact with EEG data in 3D space.",
-    longDescription: "This project revolutionizes how medical professionals interact with EEG data by bringing it into three-dimensional space. Using Virtual Reality, we've created an intuitive environment where clinicians can manipulate and analyze brain activity data in ways previously impossible with traditional 2D displays.",
+    longDescription: "This project revolutionises how medical professionals interact with EEG data by bringing it into three-dimensional space. Using Virtual Reality, we've created an intuitive environment where clinicians can manipulate and analyze brain activity data in ways previously impossible with traditional 2D displays. While also State of the Art AI seizure detection and sonification algorithms were implemented. Full source Thesis and source code will be available once the project is published.",
     image: "/Images/Projects/EEG_VR.png",
     technologies: ["Unity", "C#", "Python", "OpenXR", "VR", "AR"],
-    github: "https://github.com/amcreed/eeg-vr",
+    // github: "https://github.com/amcreed/eeg-vr",
     challenges: [
-      "Optimizing performance for real-time 3D visualization of complex EEG data",
+      "Optimising performance for real-time 3D visualisation of complex EEG data",
       "Creating intuitive VR interactions for medical professionals",
-      "Ensuring accurate data representation in 3D space"
+      "Ensuring accurate data representation in 3D space",
+      "Ensuring sufficient performance for Virtual Reality Rendering"
     ],
     outcomes: [
-      "Reduced analysis time by 40% compared to traditional methods",
-      "Improved pattern recognition in complex EEG data",
-      "Positive feedback from medical professionals"
+      "Non-Expert clinicians can now use VR to visualise EEG data and detect seizures as accurately as expert clinicians",
+      "Visualisations of EEG data in 3D space allow for a more intuitive understanding of the data",
+      "Visualisation of vast amounts of data in a virtual reality environment in a novel way"
     ],
     images: [
       "/Images/Projects/EEG_VR_1.png",
       "/Images/Projects/EEG_VR_2.png",
       "/Images/Projects/EEG_VR_3.png",
-      "/Images/Projects/EEG_VR_4.png"
-    ]
+    ],
+    captions: [
+      "Main Screen of the VR World - Shows the different channels of EEG data",
+      "The EEG Data broken into its different frequency bands and visualised in 3D space",
+      "3D Brain Model showing the AI's detection of a seizure in a traffic light pattern",
+    ],
+    youtube: "3XZXtIzvPPM"
   },
   {
     title: "IoT Carbon Monitoring",
     description: "A Virtual Reality environment that allows clinicians to visualise and interact with EEG data in 3D space.",
-    longDescription: "This project revolutionizes how medical professionals interact with EEG data by bringing it into three-dimensional space. Using Virtual Reality, we've created an intuitive environment where clinicians can manipulate and analyze brain activity data in ways previously impossible with traditional 2D displays.",
+    longDescription: "This project revolutionises how medical professionals interact with EEG data by bringing it into three-dimensional space. Using Virtual Reality, we've created an intuitive environment where clinicians can manipulate and analyze brain activity data in ways previously impossible with traditional 2D displays. While also State of the Art AI seizure detection and sonification algorithms.",
     image: "/Images/Projects/EEG_VR.png",
     technologies: ["Unity", "C#", "Python", "OpenXR", "VR", "AR"],
-    github: "https://github.com/amcreed/eeg-vr",
     challenges: [
-      "Optimizing performance for real-time 3D visualization of complex EEG data",
+      "Optimising performance for real-time 3D visualisation of complex EEG data",
       "Creating intuitive VR interactions for medical professionals",
-      "Ensuring accurate data representation in 3D space"
+      "Ensuring accurate data representation in 3D space",
+      "Ensuring sufficient performance for Virtual Reality Rendering"
     ],
     outcomes: [
-      "Reduced analysis time by 40% compared to traditional methods",
-      "Improved pattern recognition in complex EEG data",
-      "Positive feedback from medical professionals"
+      "Non-Expert clinicians can now use VR to visualise EEG data and detect seizures as accurately as expert clinicians",
+      "Visualisations of EEG data in 3D space allow for a more intuitive understanding of the data",
+      "Visualisation of vast amounts of data in a virtual reality environment in a novel way"
     ],
     images: [
       "/Images/Projects/EEG_VR_1.png",
       "/Images/Projects/EEG_VR_2.png",
       "/Images/Projects/EEG_VR_3.png",
       "/Images/Projects/EEG_VR_4.png"
-    ]
+    ],
+    captions: [
+      "IoT Carbon Monitoring - Image 1",
+      "IoT Carbon Monitoring - Image 2",
+      "IoT Carbon Monitoring - Image 3",
+      "IoT Carbon Monitoring - Image 4",
+    ],
+    youtube: "dQw4w9WgXcQ"
   },
   {
     title: "Raspberry Pi Smart Mirror",
@@ -86,9 +101,14 @@ const projects: Project[] = [
     images: [
       "/Images/Projects/EEG_VR_1.png",
       "/Images/Projects/EEG_VR_2.png",
-      "/Images/Projects/EEG_VR_3.png",
-      "/Images/Projects/EEG_VR_4.png"
-    ]
+      "/Images/Projects/EEG_VR_3.png"
+    ],
+    captions: [
+      "Raspberry Pi Smart Mirror - Image 1",
+      "Raspberry Pi Smart Mirror - Image 2",
+      "Raspberry Pi Smart Mirror - Image 3",
+    ],
+    youtube: "dQw4w9WgXcQ"
   },
   {
     title: "Club Fundraising Platform",
@@ -112,7 +132,14 @@ const projects: Project[] = [
       "/Images/Projects/EEG_VR_2.png",
       "/Images/Projects/EEG_VR_3.png",
       "/Images/Projects/EEG_VR_4.png"
-    ]
+    ],
+    captions: [
+      "Club Fundraising Platform - Image 1",
+      "Club Fundraising Platform - Image 2",
+      "Club Fundraising Platform - Image 3",
+      "Club Fundraising Platform - Image 4",
+    ],
+    youtube: "dQw4w9WgXcQ"
   },
   // ... Update other projects with additional details
 ];

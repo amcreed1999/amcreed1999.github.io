@@ -1,6 +1,7 @@
 "use client";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 interface ProjectModalProps {
   isOpen: boolean;
@@ -16,21 +17,50 @@ interface ProjectModalProps {
     challenges?: string[];
     outcomes?: string[];
     images?: string[];
+    captions?: string[];
+    youtube?: string;
   };
 }
 
 const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
+  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+  const [lightboxCaption, setLightboxCaption] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        if (lightboxImage) {
+          setLightboxImage(null);
+          setLightboxCaption(null);
+        } else {
+          onClose();
+        }
+      }
+    };
+
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener("keydown", handleKeyDown);
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen, onClose, lightboxImage]);
 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-[1000]">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex overflow-y-auto items-center justify-center p-4 z-[1000]">
       <div 
         className={`${
           isDark ? 'bg-gray-800' : 'bg-white'
-        } rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden relative`}
+        } rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative`}
       >
         {/* Header */}
         <div className="sticky top-0 p-6 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center bg-inherit">
@@ -58,6 +88,25 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
               className="object-cover"
             />
           </div>
+
+          {/* YouTube Video */}
+          {project.youtube && (
+            <div className="mb-6">
+              <h3 className={`text-lg font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                Project Video
+              </h3>
+              <div className="aspect-w-16 aspect-h-9">
+                <iframe
+                  src={`https://www.youtube.com/embed/${project.youtube}`}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
+              </div>
+            </div>
+          )}
 
           {/* Technologies */}
           <div className="mb-6">
@@ -119,20 +168,30 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
           )}
 
           {/* Additional Images */}
-          {project.images && (
+          {project.images && project.images.length > 0 && (
             <div className="mb-6">
               <h3 className={`text-lg font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 Project Gallery
               </h3>
               <div className="grid grid-cols-2 gap-4">
                 {project.images.map((image, index) => (
-                  <div key={index} className="relative h-48 rounded-lg overflow-hidden">
+                  <div 
+                    key={index} 
+                    className="relative h-48 rounded-lg overflow-hidden cursor-pointer group"
+                    onClick={() => {
+                      setLightboxImage(image);
+                      setLightboxCaption(project.captions ? project.captions[index] : null);
+                    }}
+                  >
                     <Image
                       src={image}
                       alt={`${project.title} gallery ${index + 1}`}
                       fill
-                      className="object-cover"
+                      className="object-cover transition-transform duration-300 transform group-hover:scale-105"
                     />
+                    <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      {project.captions ? project.captions[index] : `Image ${index + 1}`}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -168,6 +227,30 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
           </div>
         </div>
       </div>
+
+      {/* Lightbox for Image Viewing */}
+      {lightboxImage && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-[1100]"
+          onClick={() => {
+            setLightboxImage(null);
+            setLightboxCaption(null);
+          }}
+        >
+          <div className="relative max-w-3xl w-full p-4">
+            <img
+              src={lightboxImage}
+              alt="Lightbox Image"
+              className="object-contain w-full h-full rounded-lg"
+            />
+            {lightboxCaption && (
+              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-75 text-white text-center py-2">
+                {lightboxCaption}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
