@@ -53,11 +53,14 @@ const Testimonials = () => {
   return (
     <section className={`py-16 ${isDark ? 'bg-gray-900' : 'bg-white'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className={`text-3xl sm:text-4xl font-extrabold text-center mb-12 ${
+        <h2 className={`text-3xl sm:text-4xl font-extrabold text-center  ${
           isDark ? 'text-white' : 'text-gray-900'
         }`}>
           What People Say
         </h2>
+        <p className={`text-center mb-8 ${isDark ? 'text-gray-400' : 'text-gray-500'} text-lg`}>
+          I asked some of my nearest and dearest to write something for my website. Here is what they had to say:
+        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {testimonials.map((testimonial, index) => (
