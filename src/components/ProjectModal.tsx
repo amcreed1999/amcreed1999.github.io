@@ -95,7 +95,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
               <h3 className={`text-lg font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 Project Video
               </h3>
-              <div className="aspect-w-16 aspect-h-9">
+              <div className="aspect-w-16 aspect-h-9 w-[66%] rounded-lg mx-auto">
                 <iframe
                   src={`https://www.youtube.com/embed/${project.youtube}`}
                   title="YouTube video player"

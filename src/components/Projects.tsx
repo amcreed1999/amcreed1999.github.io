@@ -50,36 +50,40 @@ const projects: Project[] = [
     ],
     youtube: "3XZXtIzvPPM"
   },
+  // ------------------------------------------------------------ FYP PROJECTS --------------------------------------------------------------------------------------------
   {
-    title: "IoT Carbon Monitoring",
-    description: "A Virtual Reality environment that allows clinicians to visualise and interact with EEG data in 3D space.",
-    longDescription: "This project revolutionises how medical professionals interact with EEG data by bringing it into three-dimensional space. Using Virtual Reality, we've created an intuitive environment where clinicians can manipulate and analyze brain activity data in ways previously impossible with traditional 2D displays. While also State of the Art AI seizure detection and sonification algorithms.",
-    image: "/Images/Projects/EEG_VR.png",
-    technologies: ["Unity", "C#", "Python", "OpenXR", "VR", "AR"],
+    title: "Undergraduate Final Year Project: IoT Carbon Monitoring",
+    description: "A LoRA based Carbon Monitoring System with Cloud Integration",
+    longDescription: "How does one get data back from a location with no internet connection? This project aims to address this question by creating a LoRA based Carbon Monitoring System that can be deployed in remote locations and send data back to a cloud server. The system is designed to be low cost and low power consuming, making it suitable for remote locations. There was also a requirement to retrofit the existing hardware to allow it to communicate with the new system and with the cloud for monitoring.",
+    image: "/Images/Projects/Final_FYP_Node.jpg",
+    technologies: ["LoRa", "C++", "Python", "AWS", "Raspberry Pi","MQTT", "Real Deployment","Hardware Design", "System Architecture","Energy Harvesting", "I2C", "UART", "SPI" ],
     challenges: [
-      "Optimising performance for real-time 3D visualisation of complex EEG data",
-      "Creating intuitive VR interactions for medical professionals",
-      "Ensuring accurate data representation in 3D space",
-      "Ensuring sufficient performance for Virtual Reality Rendering"
+      "Creating a system that can be deployed in remote locations",
+      "Ensuring the system is low cost and low power consuming",
+      "Harvesting Energy to increase the longevity of the device",
+      "Ensuring the system is reliable and can handle the harsh environment of a remote location"
     ],
     outcomes: [
-      "Non-Expert clinicians can now use VR to visualise EEG data and detect seizures as accurately as expert clinicians",
-      "Visualisations of EEG data in 3D space allow for a more intuitive understanding of the data",
-      "Visualisation of vast amounts of data in a virtual reality environment in a novel way"
+      "A real world working example of a LoRA based Carbon Monitoring System",
+      "A system that can be easily deployed in remote locations",
+      "A system that can be monitored in real time through a web interface",
+      "A system that is reliable and can handle the harsh environment of a remote location"
     ],
     images: [
-      "/Images/Projects/EEG_VR_1.png",
-      "/Images/Projects/EEG_VR_2.png",
-      "/Images/Projects/EEG_VR_3.png",
-      "/Images/Projects/EEG_VR_4.png"
+      "/Images/Projects/Final_FYP_Node.jpg",
+      "/Images/Projects/CR3000.png",
+      "/Images/Projects/FYP_Hardware.png",
+      "/Images/Projects/FYP_Cloud.png",
+      "/Images/Projects/FYP_Dashboard.png"
     ],
     captions: [
-      "IoT Carbon Monitoring - Image 1",
-      "IoT Carbon Monitoring - Image 2",
-      "IoT Carbon Monitoring - Image 3",
-      "IoT Carbon Monitoring - Image 4",
+      "Final Version of the IoT Node with LoRA capabilities",
+      "CR3000 Data Acquisition System that was retrofitted to work with the new system",
+      "The schematic of the hardware and communication protocols used in the project",
+      "The AWS Cloud Architecture used to host the data and provide a web interface",
+      "The Dashboard that was displayed on the Open Day to show the system in action",
     ],
-    youtube: "dQw4w9WgXcQ"
+    // youtube: "dQw4w9WgXcQ"
   },
   {
     title: "Raspberry Pi Smart Mirror",
