@@ -91,7 +91,7 @@ const projects: Project[] = [
     title: "Raspberry Pi Smart Mirror",
     description: "A Christmas Gift for my Girlfriend",
     longDescription: "What do you get for the girl that has everything? A Smart Mirror of course! This project was a fun project to do over the Christmas period and was a great success. I was probably more stressed for this project  than any other I had done, A tough client- the father in law! Ready to scrutinise everything down to the last screw or soldered joint. But in the end it was a great success and I learned a lot about the Raspberry Pi and the different libraries and frameworks that are available for it, while also showcasing a lot of my skills into a real world application under a time constraint.",
-    image: "/Images/Projects/EEG_VR.png",
+    image: "/Images/Projects/Mirror_Front.jpg",
     technologies: ["Raspberry Pi", "Python", "Soldering", "Fusion360", "CAD", "Woodworking", "Wiring", "API's", "GCP", "Prototyping", "Project Management"],
     // github: "https://github.com/amcreed/eeg-vr",
     challenges: [
@@ -106,16 +106,18 @@ const projects: Project[] = [
       "A working Raspberry Pi Smart Mirror that still works over a year later with no problems"
     ],
     images: [
-      "/Images/Projects/EEG_VR_1.png",
-      "/Images/Projects/EEG_VR_2.png",
-      "/Images/Projects/EEG_VR_3.png"
+      "/Images/Projects/Mirror_Front.jpg",
+      "/Images/Projects/Mirror_Backside.jpg",
+      "/Images/Projects/Mirror_Early.jpg",
+      "Images/Projects/Mirror_CAD.png"
     ],
     captions: [
-      "Raspberry Pi Smart Mirror - Image 1",
-      "Raspberry Pi Smart Mirror - Image 2",
-      "Raspberry Pi Smart Mirror - Image 3",
+      "Mirror in its final physical assembly",
+      "Backside of the Mirror with Cover Removed",
+      "The first assembly of the mirror without all the wires",
+      "The Final CAD design of the mirror",
     ],
-    youtube: "dQw4w9WgXcQ"
+    youtube: "Hgp_peyV6LY"
   },
   {
     title: "Club Fundraising Platform (Ongoing)",
