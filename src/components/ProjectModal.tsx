@@ -19,6 +19,7 @@ interface ProjectModalProps {
     images?: string[];
     captions?: string[];
     youtube?: string;
+    website?: string;
   };
 }
 
@@ -200,6 +201,16 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
 
           {/* Links */}
           <div className="flex gap-4 mt-8">
+            {project.website && (
+              <a
+                href={project.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`px-6 py-3 rounded-lg font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-colors`}
+              >
+                Visit Website
+              </a>
+            )}
             {project.link && (
               <a
                 href={project.link}

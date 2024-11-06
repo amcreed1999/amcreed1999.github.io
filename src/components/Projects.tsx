@@ -17,6 +17,7 @@ interface Project {
   images?: string[];
   captions?: string[];
   youtube?: string;
+  website?: string;
 }
 
 const projects: Project[] = [
@@ -26,7 +27,8 @@ const projects: Project[] = [
     longDescription: "This project revolutionises how medical professionals interact with EEG data by bringing it into three-dimensional space. Using Virtual Reality, we've created an intuitive environment where clinicians can manipulate and analyze brain activity data in ways previously impossible with traditional 2D displays. While also State of the Art AI seizure detection and sonification algorithms were implemented. Full source Thesis and source code will be available once the project is published.",
     image: "/Images/Projects/EEG_VR.png",
     technologies: ["Unity", "C#", "Python", "OpenXR", "VR", "AR"],
-    // github: "https://github.com/amcreed/eeg-vr",
+    github: "https://github.com/amcreed/eeg-vr",
+
     challenges: [
       "Optimising performance for real-time 3D visualisation of complex EEG data",
       "Creating intuitive VR interactions for medical professionals",
@@ -87,20 +89,21 @@ const projects: Project[] = [
   },
   {
     title: "Raspberry Pi Smart Mirror",
-    description: "A Virtual Reality environment that allows clinicians to visualise and interact with EEG data in 3D space.",
-    longDescription: "This project revolutionizes how medical professionals interact with EEG data by bringing it into three-dimensional space. Using Virtual Reality, we've created an intuitive environment where clinicians can manipulate and analyze brain activity data in ways previously impossible with traditional 2D displays.",
+    description: "A Christmas Gift for my Girlfriend",
+    longDescription: "What do you get for the girl that has everything? A Smart Mirror of course! This project was a fun project to do over the Christmas period and was a great success. I was probably more stressed for this project  than any other I had done, A tough client- the father in law! Ready to scrutinise everything down to the last screw or soldered joint. But in the end it was a great success and I learned a lot about the Raspberry Pi and the different libraries and frameworks that are available for it, while also showcasing a lot of my skills into a real world application under a time constraint.",
     image: "/Images/Projects/EEG_VR.png",
-    technologies: ["Unity", "C#", "Python", "OpenXR", "VR", "AR"],
-    github: "https://github.com/amcreed/eeg-vr",
+    technologies: ["Raspberry Pi", "Python", "Soldering", "Fusion360", "CAD", "Woodworking", "Wiring", "API's", "GCP", "Prototyping", "Project Management"],
+    // github: "https://github.com/amcreed/eeg-vr",
     challenges: [
-      "Optimizing performance for real-time 3D visualization of complex EEG data",
-      "Creating intuitive VR interactions for medical professionals",
-      "Ensuring accurate data representation in 3D space"
+      "A very tough client to impress in a very tight time constraint while she is not around",
+      "Lots of soldering and wiring and coding",
+      "A final physical assembly and testing phase to ensure everything worked perfectly"
     ],
     outcomes: [
-      "Reduced analysis time by 40% compared to traditional methods",
-      "Improved pattern recognition in complex EEG data",
-      "Positive feedback from medical professionals"
+      "One very happy girlfriend",
+      "Lots of new skills in coding, cloud computing, API's, soldering, woodworking and wiring. ",
+      "A real world application of my skills",
+      "A working Raspberry Pi Smart Mirror that still works over a year later with no problems"
     ],
     images: [
       "/Images/Projects/EEG_VR_1.png",
@@ -115,37 +118,37 @@ const projects: Project[] = [
     youtube: "dQw4w9WgXcQ"
   },
   {
-    title: "Club Fundraising Platform",
-    description: "A Virtual Reality environment that allows clinicians to visualise and interact with EEG data in 3D space.",
-    longDescription: "This project revolutionizes how medical professionals interact with EEG data by bringing it into three-dimensional space. Using Virtual Reality, we've created an intuitive environment where clinicians can manipulate and analyze brain activity data in ways previously impossible with traditional 2D displays.",
-    image: "/Images/Projects/EEG_VR.png",
-    technologies: ["Unity", "C#", "Python", "OpenXR", "VR", "AR"],
-    github: "https://github.com/amcreed/eeg-vr",
+    title: "Club Fundraising Platform (Ongoing)",
+    description: "A SaaS Platform for Clubs to Fundraise",
+    longDescription: "This project is a platform for clubs to run a online fundraisers for their club. It started with the running of an online fundraiser for my own club, but it has now been expanded to allow for other clubs to use it as well. It is a work in progress and is still being developed.",
+    image: "/Images/Projects/Club_Fundraiser.png",
+    technologies: ["NextJS", "TailwindCSS", "Typescript", "Vercel", "Stripe", "Firebase", "Sketch", "Mailgun"],
+    // github: "https://github.com/amcreed/eeg-vr",
+    website: "https://www.club-fundraiser.com",
     challenges: [
-      "Optimizing performance for real-time 3D visualization of complex EEG data",
-      "Creating intuitive VR interactions for medical professionals",
-      "Ensuring accurate data representation in 3D space"
+      "Creating a platform that is easy to use and understand",
+      "Creating a platform that is customisable for each club",
+      "Ensuring the platform is secure and can handle the payment processing",
+      "Keeping track of the funds and donations to ensure each club gets the correct amount"
     ],
     outcomes: [
-      "Reduced analysis time by 40% compared to traditional methods",
-      "Improved pattern recognition in complex EEG data",
-      "Positive feedback from medical professionals"
+      "Over €100K raised for clubs",
+      "A platform that is customisable for each club",
+      "A platform that is secure and can handle the payment processing",
+      "A platform that keeps track of the funds and donations to ensure each club gets the correct amount"
     ],
     images: [
-      "/Images/Projects/EEG_VR_1.png",
-      "/Images/Projects/EEG_VR_2.png",
-      "/Images/Projects/EEG_VR_3.png",
-      "/Images/Projects/EEG_VR_4.png"
+      "/Images/Projects/Club_Fundraiser.png",
+      "/Images/Projects/CF_FermoyGAA.png",
+      "/Images/Projects/CF_LMS_Inniscarra.png",
     ],
     captions: [
-      "Club Fundraising Platform - Image 1",
-      "Club Fundraising Platform - Image 2",
-      "Club Fundraising Platform - Image 3",
-      "Club Fundraising Platform - Image 4",
+      "Hero of the Club Fundraising Platform",
+      "Fermoy GAA Club Fundraising Page",
+      "Example of one competition on the platform",
     ],
-    youtube: "dQw4w9WgXcQ"
+    // youtube: "dQw4w9WgXcQ"
   },
-  // ... Update other projects with additional details
 ];
 
 const Projects = () => {
