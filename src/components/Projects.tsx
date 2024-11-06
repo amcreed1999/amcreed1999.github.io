@@ -27,7 +27,7 @@ const projects: Project[] = [
     longDescription: "This project revolutionises how medical professionals interact with EEG data by bringing it into three-dimensional space. Using Virtual Reality, we've created an intuitive environment where clinicians can manipulate and analyze brain activity data in ways previously impossible with traditional 2D displays. While also State of the Art AI seizure detection and sonification algorithms were implemented. Full source Thesis and source code will be available once the project is published.",
     image: "/Images/Projects/EEG_VR.png",
     technologies: ["Unity", "C#", "Python", "OpenXR", "VR", "AR"],
-    github: "https://github.com/amcreed/eeg-vr",
+    // github: "https://github.com/amcreed/eeg-vr",
 
     challenges: [
       "Optimising performance for real-time 3D visualisation of complex EEG data",
