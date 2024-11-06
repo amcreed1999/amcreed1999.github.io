@@ -29,12 +29,12 @@ const testimonials: Testimonial[] = [
     linkedin: "https://www.linkedin.com/in/leah-twomey/"
   },
   {
-    name: "John Murphy",
-    role: "R&D Manager",
-    company: "Liebherr Container Cranes",
-    image: "/Images/Testimonials/john.jpg",
-    quote: "During his internship, Adam quickly adapted to our development environment and made valuable contributions to our GPS tracking system project. His ability to work independently while maintaining clear communication was impressive.",
-    linkedin: "https://www.linkedin.com/in/john-murphy-7b7b7b7b7b/"
+    name: "Bosco Creed",
+    role: "Operations Director",
+    company: "South Coast Logistics",
+    image: "https://media.licdn.com/dms/image/v2/C4D03AQEwgocI4iiIgw/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1517341634624?e=1736380800&v=beta&t=pK4APviBVh2G2QTTkSD68ztVMiBoIu5AJL7Cxa5bJAI",
+    quote: "Adam has demonstrated an appetite for hard work over several part time jobs while in school or 3rd level. Whether it was sourcing hard to find parts for mechanics or loose loading shipping containers, his can do attitude always shone through. Blessed with intelligence and determination to get the job, you can be assured Adam will always deliver. On the other hand if you just want someone to do a Gannt Chart for the perfect Christmas dinner he is the man for that challenge too! 😉",
+    linkedin: "https://www.linkedin.com/in/bosco-creed-01ba6025/"
   },
   {
     name: "Sarah O'Connor",
@@ -94,19 +94,20 @@ const Testimonials = () => {
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
                         {testimonial.name}
+                        <a href={testimonial.linkedin} target="_blank" rel="noopener noreferrer" className="ml-2">
+                        <img
+                          src="/Images/LinkedIn.png"
+                          alt="LinkedIn"
+                          className="inline-flex items-center justify-center w-6 h-6 rounded-sm bg-blue-600 hover:bg-blue-700 transition-colors duration-300"
+                        />
+                      </a>
                       </p>
                       <p className={`text-sm ${
                         isDark ? 'text-gray-400' : 'text-gray-600'
                       }`}>
                         {testimonial.role} at {testimonial.company}
                       </p>
-                      <a href={testimonial.linkedin} target="_blank" rel="noopener noreferrer" className="ml-2">
-                        <img
-                          src="/Images/LinkedIn.png"
-                          alt="LinkedIn"
-                          className="w-6 h-6 hover:opacity-75 transition-opacity"
-                        />
-                      </a>
+
                     </div>
                   </div>
                 </div>
