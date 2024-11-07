@@ -20,7 +20,7 @@ const HeroOverlay = () => {
               Adam Creed
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-blue-600 dark:text-gray-300 font-light leading-relaxed">
-              Software Developer & Engineer 💻
+              Electronics Engineer & Software Developer  💻
             </p>
             <p className="text-blue-600/80 dark:text-gray-400 max-w-lg text-sm sm:text-base md:text-lg leading-snug">
               Passionate about breaking things in the name of progress 🔧. To check out all my skills behind me, push the button in the bottom right 👇.
