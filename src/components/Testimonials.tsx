@@ -37,12 +37,12 @@ const testimonials: Testimonial[] = [
     linkedin: "https://www.linkedin.com/in/bosco-creed-01ba6025/"
   },
   {
-    name: "Sarah O'Connor",
-    role: "CEO",
-    company: "Local Startup Hub",
-    image: "/Images/Testimonials/sarah.jpg",
-    quote: "Adam's pitch won our startup competition due to his clear vision and technical expertise. His ability to explain complex technical solutions in simple terms set him apart.",
-    linkedin: "https://www.linkedin.com/in/sarah-oconnor-7b7b7b7b7b/"
+    name: "Jack Scannell",
+    role: "Supply Chain Manager",
+    company: "Veolia Ireland",
+    image: "https://media.licdn.com/dms/image/v2/D4D03AQGp21n7y7iOsQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1676368862084?e=1736985600&v=beta&t=5GZFbbVlZZZzvKqZ2GQXfMDw7pWKVzmVoZaU9O6vTSU",
+    quote: "I’ve known Adam for quite a number of years and I’ve come to know him as a person of exceptional reliability, strong work ethic, and remarkable technical aptitude.  Over the past few years I’ve come to realise what makes Adam so exceptional and that’s how many people rely on him as their “Fix it guy“. If your local business needed a new software system? Adam’s your guy. If your sports club is trying to raise funds of 300k but doesn’t know how to create a website or a payment system for such volume? Adam’s your guy. Overall he’s a standup guy with a strong work ethic and now that’s he’s leaving Ireland I truly think a lot of people in our community will start to realise how much Adam really is one of a kind. ",
+    linkedin: "https://www.linkedin.com/in/jackscannell/"
   }
 ];
 
