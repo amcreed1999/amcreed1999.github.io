@@ -222,7 +222,7 @@ const skillLogos: SkillLogo[] = [
   },
   { 
     name: "WordPress", 
-    imageUrl: "/Images/WordPress_Logo.png",
+    imageUrl: "/Images/Wordpress_Logo.png",
     learnedAt: "Self-taught",
     description: "Built my first website on it. Moved away from it when I started learning React."
   },
