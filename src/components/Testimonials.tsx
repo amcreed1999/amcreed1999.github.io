@@ -16,7 +16,7 @@ const testimonials: Testimonial[] = [
     name: "Declan Duggan",
     role: "Research Student",
     company: "University College Cork",
-    image: "https://media.licdn.com/dms/image/v2/D4D03AQFRJEI7ZzA6eQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1709026390712?e=1736380800&v=beta&t=tmkR2mXZICgUxa2ZkX2mPTGOuI7c66_rOAoi_s6mJHs",
+    image: "Images/Declan_Duggan.jpeg",
     quote: "Hmm, how to describe Adam? Imagine if Mark Zuckerberg could weld, make garden furniture, build cranes, break a tackle, cook a mean chicken tika massala, sing like a bird, oh and also had a sense of humour, and you'd get close. But the reality is he's unique, so you'll have to hire him to find out what's he's really like ¯\_(ツ)_/¯",
     linkedin: "https://www.linkedin.com/in/declan-duggan-2916372b7/"
   },
@@ -24,7 +24,7 @@ const testimonials: Testimonial[] = [
     name: "Leah Twomey",
     role: "Research Student",
     company: "University College Cork",
-    image: "https://media.licdn.com/dms/image/v2/D4E03AQHaTPWayAN2vA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1700249993204?e=1736380800&v=beta&t=LJbifuZu8qBKNAKMHUTIZW6DDkWfUpsghlXNzwRrRxE",
+    image: "Images/Leah_Twomey.jpeg",
     quote: "Adam is an innovative and creative thinker, bringing a unique commitment to every project he undertakes. His focus on finding solutions, no matter the obstacles, is unmatched. He’s the only person I know who would willingly stand in a peatland in the rain for 12 hours with me, determined to debug and deploy a successful solution. His drive and passion for technical excellence in real-world settings make him an invaluable problem-solver.",
     linkedin: "https://www.linkedin.com/in/leah-twomey/"
   },
@@ -32,7 +32,7 @@ const testimonials: Testimonial[] = [
     name: "Bosco Creed",
     role: "Operations Director",
     company: "South Coast Logistics",
-    image: "https://media.licdn.com/dms/image/v2/C4D03AQEwgocI4iiIgw/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1517341634624?e=1736380800&v=beta&t=pK4APviBVh2G2QTTkSD68ztVMiBoIu5AJL7Cxa5bJAI",
+    image: "Images/Bosco_Creed.jpeg",
     quote: "Adam has demonstrated an appetite for hard work over several part time jobs while in school or 3rd level. Whether it was sourcing hard to find parts for mechanics or loose loading shipping containers, his can do attitude always shone through. Blessed with intelligence and determination to get the job, you can be assured Adam will always deliver. On the other hand if you just want someone to do a Gannt Chart for the perfect Christmas dinner he is the man for that challenge too! 😉",
     linkedin: "https://www.linkedin.com/in/bosco-creed-01ba6025/"
   },
@@ -40,7 +40,7 @@ const testimonials: Testimonial[] = [
     name: "Jack Scannell",
     role: "Supply Chain Manager",
     company: "Veolia Ireland",
-    image: "https://media.licdn.com/dms/image/v2/D4D03AQGp21n7y7iOsQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1676368862084?e=1736985600&v=beta&t=5GZFbbVlZZZzvKqZ2GQXfMDw7pWKVzmVoZaU9O6vTSU",
+    image: "Images/Jack_Scannell.jpeg",
     quote: "I’ve known Adam for quite a number of years and I’ve come to know him as a person of exceptional reliability, strong work ethic, and remarkable technical aptitude.  Over the past few years I’ve come to realise what makes Adam so exceptional and that’s how many people rely on him as their “Fix it guy“. If your local business needed a new software system? Adam’s your guy. If your sports club is trying to raise funds of 300k but doesn’t know how to create a website or a payment system for such volume? Adam’s your guy. Overall he’s a standup guy with a strong work ethic and now that’s he’s leaving Ireland I truly think a lot of people in our community will start to realise how much Adam really is one of a kind. ",
     linkedin: "https://www.linkedin.com/in/jackscannell/"
   }
