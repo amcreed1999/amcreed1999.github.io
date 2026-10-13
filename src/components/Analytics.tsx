@@ -106,14 +106,6 @@ export default function Analytics() {
         return;
       }
 
-      if (interactive.classList.contains("theme-toggle")) {
-        const nextTheme = interactive.getAttribute("aria-label")?.includes("dark")
-          ? "dark"
-          : "light";
-        trackEvent("theme_change", { theme: nextTheme });
-        return;
-      }
-
       if (!(interactive instanceof HTMLAnchorElement)) return;
       const href = interactive.getAttribute("href") ?? "";
 

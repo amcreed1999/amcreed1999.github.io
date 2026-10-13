@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useTheme } from "next-themes";
 
 const links = [
   { label: "Impact", href: "#impact", id: "impact" },
@@ -12,14 +11,10 @@ const links = [
 ];
 
 export default function Navbar() {
-  const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("top");
   const [progress, setProgress] = useState(0);
   const [overHero, setOverHero] = useState(true);
-
-  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     const sections = ["top", ...links.map((link) => link.id)]
@@ -50,7 +45,6 @@ export default function Navbar() {
   }, []);
 
   const closeMenu = () => setMenuOpen(false);
-  const dark = mounted && resolvedTheme === "dark";
 
   return (
     <header className={`site-header ${overHero ? "is-over-hero" : ""}`}>
@@ -86,15 +80,6 @@ export default function Navbar() {
         </div>
 
         <div className="nav-controls">
-          <button
-            type="button"
-            className="theme-toggle"
-            aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
-            aria-pressed={dark}
-            onClick={() => setTheme(dark ? "light" : "dark")}
-          >
-            <span aria-hidden="true">{mounted ? (dark ? "☾" : "☀") : "○"}</span>
-          </button>
           <button
             type="button"
             className="menu-toggle"

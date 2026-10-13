@@ -132,10 +132,11 @@ export default function ImpactRail() {
         <div className="impact-stage-inner section-shell">
           <div className="section-intro impact-intro">
             <p className="eyebrow">Production outcomes</p>
-            <h2 id="impact-title">Software measured by what changed.</h2>
+            <h2 id="impact-title">Measured by what changed for operators.</h2>
             <p>
-              Faster workflows, fewer recurring bugs and clearer operations — the
-              results of architecture, testing and engineering discipline.
+              Fewer recurring bugs, faster financial workflows, live fleet updates
+              and AI that gives clinicians time back — from FreightCyber and
+              products I shipped independently.
             </p>
           </div>
 

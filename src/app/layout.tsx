@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { ThemeProvider } from "next-themes";
 import Script from "next/script";
 import Analytics from "@/components/Analytics";
 import { GA_MEASUREMENT_ID } from "@/lib/analytics";
@@ -9,38 +8,34 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://amcreed1999.github.io"),
   title: "Adam Creed · Engineering Team Lead",
   description:
-    "Adam Creed is a hands-on Engineering Team Lead building distributed AWS platforms, reliable backend systems and applied AI products.",
+    "Hands-on Engineering Team Lead building distributed AWS platforms and reliable backends in Melbourne — applied AI where it earns its place.",
   openGraph: {
-    title: "Adam Creed · Software Engineering Team Lead",
+    title: "Adam Creed · Engineering Team Lead",
     description:
-      "Hands-on technical leadership across distributed systems, AWS platforms, production reliability and applied AI.",
+      "Hands-on technical leadership for AWS platforms, distributed backends and production reliability — applied AI second.",
     type: "website",
     locale: "en_AU",
   },
   twitter: {
     card: "summary",
-    title: "Adam Creed · Software Engineering Team Lead",
+    title: "Adam Creed · Engineering Team Lead",
     description:
-      "Hands-on technical leadership across distributed systems, AWS platforms, production reliability and applied AI.",
+      "Hands-on technical leadership for AWS platforms, distributed backends and production reliability — applied AI second.",
   },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f3efe4" },
-    { media: "(prefers-color-scheme: dark)", color: "#171b1c" },
-  ],
+  themeColor: "#f3efe4",
+  colorScheme: "only light",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          {children}
-        </ThemeProvider>
+        {children}
         <Script
           async
           strategy="afterInteractive"

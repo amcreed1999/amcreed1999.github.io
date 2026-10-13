@@ -113,7 +113,7 @@ export default function HeroSystem() {
 
         <div className="hero-copy">
           <p data-hero-item className="eyebrow hero-eyebrow">
-            AWS · Distributed systems · Applied AI
+            Technical leadership · AWS platforms · Reliability
           </p>
           <h1 data-hero-item>
             <span>Software systems</span>
@@ -124,9 +124,9 @@ export default function HeroSystem() {
 
         <div data-hero-item className="hero-lower">
           <p className="hero-lede">
-            I&apos;m Adam Creed. I lead a 13-person software engineering team at
-            FreightCyber while staying hands-on with architecture, backend systems,
-            reliability and complex delivery. {hiringThesis}
+            I&apos;m Adam Creed. I lead a 13-person engineering team at FreightCyber
+            and stay hands-on with AWS architecture, distributed backends and
+            reliability — applied AI second, where it earns its place. {hiringThesis}
           </p>
           <div className="hero-actions">
             <a
@@ -153,25 +153,28 @@ export default function HeroSystem() {
 
         <div data-hero-item className="hero-telemetry" aria-hidden="true">
           <span>ROLE / TECHNICAL LEADERSHIP</span>
-          <span>FOCUS / RELIABLE SOFTWARE</span>
+          <span>FOCUS / AWS PLATFORMS</span>
           <span>MODE / HANDS-ON</span>
           <span>SCROLL TO DECONSTRUCT ↓</span>
         </div>
         </div>
 
-        <CoreScene index="01" title="Integrity before velocity." start="0.12" end="0.40" align="right">
-          I design reliability into the system: observable boundaries, safe failure modes, and fewer recurring bugs — before chasing speed.
+        <CoreScene index="01" title="Fewer recurring bugs." start="0.12" end="0.40" align="right">
+          Stronger testing, observability and root-cause discipline so the team
+          spends less time firefighting and more time shipping.
         </CoreScene>
-        <CoreScene index="02" title="Scale without the waiting." start="0.35" end="0.65" align="left">
-          Distributed workflows separate the request from the work so large operations stay fast, isolated, and recoverable under real load.
+        <CoreScene index="02" title="Work that survives failure." start="0.35" end="0.65" align="left">
+          Distributed workflows separate the request from the work — retries,
+          isolation and reconciliation keep financial and operational jobs recoverable.
         </CoreScene>
-        <CoreScene index="03" title="Architecture people can operate." start="0.60" end="0.88" align="right">
-          The strongest systems connect technical decisions, production feedback, and the team accountable for both — leadership that still ships.
+        <CoreScene index="03" title="Architecture the team can run." start="0.60" end="0.88" align="right">
+          Technical direction only counts when it stays tied to production
+          feedback and the people accountable for both.
         </CoreScene>
 
         <div className="core-finale section-shell" data-core-scene data-start="0.80" data-end="1.20" aria-hidden="true">
           <p className="eyebrow">The operating principle</p>
-          <h2>Software that holds up under pressure.</h2>
+          <h2>Production software that holds under pressure.</h2>
           <a className="button core-finale-link" href="#work">
             See the evidence <span aria-hidden="true">↓</span>
           </a>

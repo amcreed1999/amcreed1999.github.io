@@ -42,16 +42,16 @@ export interface EngineeringRoot {
 
 /** What Adam wants next — drives hero lede and contact CTA. */
 export const hiringThesis =
-  "I want hard production platforms and applied AI systems where technical leadership still means staying close to the architecture.";
+  "I want production platforms where leading still means architecture, reviews and incidents — applied AI where it fits.";
 
 export const personalArc =
-  "Ireland first: research at University College Cork and industrial R&D at Liebherr. Then Melbourne — shipping distributed systems at FreightCyber and stepping into hands-on technical leadership for a 13-person engineering team.";
+  "Ireland first: postgraduate research at University College Cork and industrial R&D at Liebherr. Then Melbourne — shipping distributed AWS systems at FreightCyber and stepping into hands-on technical leadership for a 13-person engineering team.";
 
 export const contactInvite = {
   eyebrow: "Open for the right problem",
-  headline: "Building something that has to hold up in production?",
+  headline: "Need a hands-on lead for systems that have to hold up?",
   supporting:
-    "If you need a hands-on technical lead for distributed platforms, reliability work, or applied AI that stays accountable to operators — start a conversation.",
+    "AWS platforms, distributed backends, reliability, or applied AI that stays accountable in production — start a conversation.",
   stubId: "AC/CTA.01",
 };
 
@@ -59,22 +59,22 @@ export const impactMetrics: ImpactMetric[] = [
   {
     value: "52% → 12%",
     label: "Engineering time spent on bugs",
-    context: "Testing, observability and root-cause discipline",
+    context: "Six months of testing, observability and root-cause discipline",
   },
   {
     value: "1,000+",
     label: "Jobs initiated in under six seconds",
-    context: "Asynchronous invoicing with safe retries",
+    context: "Outbox invoicing that replaced a ~15-minute synchronous path",
   },
   {
     value: "30s → <1s",
     label: "Live vehicle update latency",
-    context: "Approximately 1000+ concurrently active vehicles",
+    context: "Roughly 1K concurrently active vehicles",
   },
   {
     value: "≈4 hrs",
     label: "Saved every week with ToothNotes",
-    context: "AI-assisted clinical documentation",
+    context: "AI-assisted clinical documentation in production use",
   },
 ];
 
@@ -88,9 +88,9 @@ export const caseStudies: CaseStudy[] = [
     impact: "52% → 12%",
     impactLabel: "time spent on bugs in six months",
     description:
-      "I strengthened automated testing, review practices, deployment discipline and root-cause analysis, then made the system easier to understand with tracing, metrics and actionable alerts. In parallel, I led a brownfield migration to Terraform and the evolution from predominantly Lambda workloads toward ECS/Fargate.",
+      "I strengthened testing, review practices, deployment discipline and root-cause analysis, and improved visibility with OpenTelemetry, Grafana, Prometheus and CloudWatch. In parallel I led a brownfield AWS migration to Terraform and moved workloads from predominantly Lambda toward ECS/Fargate.",
     outcomes: [
-      "Clearer engineering standards that scale beyond individual contributors",
+      "Engineering standards that scale beyond individual contributors",
       "Repeatable AWS infrastructure and stronger operational ownership",
       "Faster diagnosis across distributed services and integrations",
     ],
@@ -114,11 +114,11 @@ export const caseStudies: CaseStudy[] = [
     impact: "1,000+",
     impactLabel: "jobs initiated in under six seconds",
     description:
-      "The workflow protects financial correctness under concurrency, third-party rate limits and partial failure. A related MYOB integration processes approximately A$500k in customer invoices each month using coordinated sequencing, targeted retries, database fallbacks and token-refresh locking.",
+      "The previous path could take around 15 minutes near 100 invoices. The outbox redesign initiates 1,000+ jobs in under six seconds with retries, failure isolation and reconciliation. A related MYOB integration processes about A$500k in customer invoices each month — coordinated sequencing, targeted retries, database fallbacks and token-refresh locking.",
     outcomes: [
       "A slow, timeout-prone workflow became fast and observable",
       "Individual failures no longer hold the entire batch hostage",
-      "Reconciliation makes recovery explicit instead of hopeful",
+      "Reconciliation makes recovery explicit, not hopeful",
     ],
     technologies: [
       "TypeScript",
@@ -139,10 +139,10 @@ export const caseStudies: CaseStudy[] = [
     impact: "<1 second",
     impactLabel: "updates, down from 30 seconds",
     description:
-      "The new flow supports roughly 1000+ concurrently active vehicles and treats consistency, connection behaviour and production diagnosis as first-class concerns rather than frontend polish.",
+      "The new flow supports roughly 1K concurrently active vehicles, treating consistency, connection behaviour and production diagnosis as first-class concerns — not frontend polish.",
     outcomes: [
       "Operators see meaningful movement as it happens",
-      "Live and historical views remain aligned",
+      "Live and historical views stay aligned",
       "The update path is easier to observe and debug",
     ],
     technologies: ["WebSockets", "TypeScript", "AWS", "Redis", "PostgreSQL"],
@@ -157,11 +157,11 @@ export const caseStudies: CaseStudy[] = [
     impact: "≈4 hours",
     impactLabel: "saved for its primary user each week",
     description:
-      "ToothNotes turns consultation information into editable clinical notes. I owned the path from problem discovery and product design through AWS architecture, Amazon Bedrock integration and production use.",
+      "ToothNotes turns consultation information into editable clinical notes. I owned the path from problem discovery and product design through AWS architecture, Amazon Bedrock and production use.",
     outcomes: [
       "A useful workflow, not an AI demo looking for a problem",
       "Editable output keeps the clinician in control",
-      "A full product taken independently from idea to production",
+      "Taken independently from idea to production",
     ],
     technologies: ["Amazon Bedrock", "AWS", "Python", "TypeScript", "Product discovery"],
     signal: ["Consult", "Structure", "Review", "Record"],
@@ -175,9 +175,9 @@ export const caseStudies: CaseStudy[] = [
     impact: "Rules + AI",
     impactLabel: "deterministic scoring with useful explanations",
     description:
-      "The assignment engine uses explicit operational rules and automated scoring tests for the decision itself. Amazon Bedrock then turns the result into a human-readable explanation, keeping generative AI away from the correctness-critical path.",
+      "Explicit operational rules and automated scoring tests own the decision. Amazon Bedrock turns the result into a human-readable explanation, keeping generative AI off the correctness-critical path.",
     outcomes: [
-      "Operational decisions remain deterministic and testable",
+      "Operational decisions stay deterministic and testable",
       "Users get a clear explanation instead of an opaque score",
       "AI improves comprehension without owning correctness",
     ],
@@ -193,11 +193,11 @@ export const caseStudies: CaseStudy[] = [
     impact: "€100k+",
     impactLabel: "processed for community clubs",
     description:
-      "The platform brings campaign pages, payments, email and administration into one flow. It began as a practical solution for my own community and became a system other clubs could use.",
+      "Campaign pages, payments, email and administration in one flow. It started as a practical fix for my own community and became something other clubs could reuse.",
     outcomes: [
       "Processed more than €100k in payments",
-      "Made each fundraiser configurable without rebuilding it",
-      "Joined product, payments and community operations",
+      "Each fundraiser configurable without rebuilding",
+      "Product, payments and community operations in one system",
     ],
     technologies: ["Next.js", "TypeScript", "Stripe", "Firebase", "Vercel", "Mailgun"],
     image: "/Images/Projects/Club_Fundraiser.png",
@@ -212,8 +212,16 @@ export const capabilityStages: CapabilityStage[] = [
     index: "01",
     title: "Architecture and backend",
     description:
-      "Distributed services and integrations designed around concurrency, partial failure and maintainable boundaries.",
-    tools: ["TypeScript", "Python", "PostgreSQL", "REST APIs", "WebSockets", "SQS", "Redis"],
+      "Distributed services and integrations designed for concurrency, partial failure and clear boundaries — with Amazon Bedrock only where AI earns its place.",
+    tools: [
+      "TypeScript",
+      "Python",
+      "PostgreSQL",
+      "REST APIs",
+      "WebSockets",
+      "SQS",
+      "Amazon Bedrock",
+    ],
   },
   {
     index: "02",
@@ -226,8 +234,15 @@ export const capabilityStages: CapabilityStage[] = [
     index: "03",
     title: "Leadership and delivery",
     description:
-      "Turning ambiguous customer and operational problems into clear technical direction and shipped software.",
-    tools: ["Architecture", "Mentoring", "Code review", "Incident response", "Product discovery", "Engineering standards"],
+      "Ambiguous customer and operational problems turned into clear technical direction and shipped software for a 13-person team.",
+    tools: [
+      "Architecture",
+      "Mentoring",
+      "Code review",
+      "Incident response",
+      "Product discovery",
+      "Engineering standards",
+    ],
   },
 ];
 
@@ -236,19 +251,19 @@ export const engineeringRoots: EngineeringRoot[] = [
     title: "EEG visualisation in VR",
     context: "MEngSc research · University College Cork",
     description:
-      "Built a clinician-focused OpenXR environment using Unity, C# and Python — early proof that I can enter an unfamiliar domain and deliver a complete software system.",
+      "Built a clinician-focused OpenXR environment in Unity, C# and Python — early proof I can enter an unfamiliar domain and ship a complete system.",
   },
   {
     title: "Remote environmental monitoring",
     context: "Undergraduate project · Peatland IoT",
     description:
-      "Connected remote sensing equipment to AWS through LoRa and an edge gateway. Useful context for how I think about distributed systems, not my current role.",
+      "Connected remote sensing equipment to AWS through LoRa and an edge gateway. Context for how I think about distributed systems — not my current role.",
   },
   {
     title: "Industrial R&D",
     context: "Liebherr · GPS and condition monitoring",
     description:
-      "Worked across positioning, networking and data analysis before moving fully into production software engineering.",
+      "GPS positioning and condition-monitoring work in Python, C/C++ and networked embedded systems before moving fully into production software.",
   },
 ];
 
@@ -258,27 +273,27 @@ export const careerEntries: CareerEntry[] = [
     role: "Engineering Team Lead",
     organisation: "FreightCyber · Melbourne",
     description:
-      "Technical direction, architecture and production reliability for a 13-person engineering team, while remaining hands-on.",
+      "Technical direction, architecture and production reliability for a 13-person engineering team across web, mobile and backend AWS services — still hands-on.",
   },
   {
     period: "Apr 2025 — Jan 2026",
     role: "Full Stack Engineer",
     organisation: "FreightCyber · Melbourne",
     description:
-      "Built distributed financial, fleet and operational systems across TypeScript, Python, PostgreSQL and AWS.",
+      "Distributed financial, fleet and operational systems in TypeScript, Python, PostgreSQL and AWS — invoicing, MYOB integration and live tracking.",
   },
   {
     period: "Jul 2023 — Oct 2024",
     role: "Postgraduate Researcher",
     organisation: "University College Cork",
     description:
-      "Designed and tested clinician-focused 3D EEG visualisation using Unity, C#, Python and OpenXR.",
+      "Clinician-focused 3D EEG visualisation in Unity, C#, Python and OpenXR with the Embedded Systems Research Group.",
   },
   {
     period: "Summer 2023",
     role: "R&D Engineering Intern",
     organisation: "Liebherr Ireland",
     description:
-      "Worked across GPS positioning, condition monitoring, software and networked embedded systems.",
+      "GPS positioning, condition monitoring, software and networked embedded systems.",
   },
 ];

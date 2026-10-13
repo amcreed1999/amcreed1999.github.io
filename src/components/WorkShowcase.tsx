@@ -136,12 +136,13 @@ export default function WorkShowcase() {
       className="work-section work-scroll"
       aria-labelledby="work-title"
     >
-      <div className="section-shell work-intro">
+      <div className="section-shell section-intro work-intro">
         <p className="eyebrow">Selected software work · 01—{String(caseStudies.length).padStart(2, "0")}</p>
-        <h2 id="work-title">Software carrying real operational weight.</h2>
+        <h2 id="work-title">Systems carrying real operational weight.</h2>
         <p>
-          Distributed systems, financial integrations, live operations and applied
-          AI — built for real customers and real failure modes.
+          FreightCyber platforms first: reliability, financial integrations and
+          live operations. Then applied AI, and an independent product that moved
+          real money.
         </p>
       </div>
 

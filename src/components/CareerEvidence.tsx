@@ -79,7 +79,7 @@ export default function CareerEvidence() {
     <section id="journey" className="journey-section section-shell" aria-labelledby="journey-title">
       <Reveal className="section-intro journey-intro">
         <p className="eyebrow">Journey</p>
-        <h2 id="journey-title">Ireland research. Melbourne leadership.</h2>
+        <h2 id="journey-title">Ireland foundations. Melbourne leadership.</h2>
         <p>{personalArc}</p>
       </Reveal>
 
@@ -103,8 +103,8 @@ export default function CareerEvidence() {
           <h3>MEngSc + BEng</h3>
           <p>
             Master of Engineering by Research and Bachelor of Electrical and
-            Electronic Engineering, University College Cork, 2024 — completed in
-            Ireland before the move to Melbourne.
+            Electronic Engineering, University College Cork, 2024 — Ireland,
+            before Melbourne.
           </p>
           <div className="education-detail">
             <span>Applied AI</span>
@@ -120,11 +120,11 @@ export default function CareerEvidence() {
       <Reveal className="roots-section">
         <div className="roots-heading">
           <p className="eyebrow">Engineering foundations</p>
-          <h3>Useful context, no longer the headline.</h3>
+          <h3>Useful context, not the headline.</h3>
           <p>
             Electronics and research in Ireland trained me to reason from first
-            principles. Today that background supports production software work
-            in Melbourne rather than defining it.
+            principles. That background supports production software leadership
+            in Melbourne.
           </p>
         </div>
         <div className="roots-list">
@@ -161,8 +161,8 @@ export default function CareerEvidence() {
 
       <Reveal className="github-panel">
         <div className="github-copy">
-          <p className="eyebrow">Public work log</p>
-          <h3>Commits are not impact. They are still a useful trail.</h3>
+          <p className="eyebrow">Still in the code</p>
+          <h3>Staying hands-on matters.</h3>
           <a className="text-link" href="https://github.com/amcreed1999" target="_blank" rel="noreferrer" data-analytics-event="profile_click" data-analytics-label="GitHub from work log">
             Open GitHub profile <span aria-hidden="true">↗</span>
           </a>

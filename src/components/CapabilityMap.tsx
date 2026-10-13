@@ -78,11 +78,12 @@ export default function CapabilityMap() {
     >
       <div className="section-shell">
         <div className="section-intro capability-intro">
-          <p className="eyebrow">Software leadership</p>
+          <p className="eyebrow">How I lead the work</p>
           <h2 id="capability-title">Architecture through operation.</h2>
           <p>
-            I work across the decisions that shape a system: backend architecture,
-            cloud operations, engineering standards and the team delivering it.
+            Backend design, AWS platforms, reliability practices and the team
+            delivering them — applied AI only where it earns its place in
+            production.
           </p>
         </div>
       </div>
@@ -117,9 +118,9 @@ export default function CapabilityMap() {
         <div className="capability-note">
           <span className="note-mark" aria-hidden="true">↳</span>
           <p>
-            My current work at FreightCyber is entirely software: web, mobile,
-            backend services, AWS infrastructure and the practices that keep them
-            reliable in production.
+            At FreightCyber: web, mobile and backend services on AWS — Terraform,
+            observability and engineering standards that keep a 13-person team
+            shipping reliably.
           </p>
         </div>
       </div>
