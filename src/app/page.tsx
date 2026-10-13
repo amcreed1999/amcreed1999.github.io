@@ -1,33 +1,29 @@
-import FloatingSkillsBackground from "../components/FloatingSkillsBackground";
-import HeroOverlay from "../components/HeroOverlay";
-import Navbar from "../components/Navbar";
-import AboutMe from '@/components/AboutMe';
-import GitHubSummary from "@/components/GitHubSummary";
-import Projects from "@/components/Projects";
-import Testimonials from "@/components/Testimonials";
-import Timeline from "@/components/Timeline";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import SmoothScroll from "@/components/SmoothScroll";
+import HeroSystem from "@/components/HeroSystem";
+import EngineeringEquation from "@/components/EngineeringEquation";
+import ImpactRail from "@/components/ImpactRail";
+import WorkShowcase from "@/components/WorkShowcase";
+import CapabilityMap from "@/components/CapabilityMap";
+import CareerEvidence from "@/components/CareerEvidence";
+import ContactFooter from "@/components/ContactFooter";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen">
+    <SmoothScroll>
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
       <Navbar />
-      <div className="relative h-screen pt-16" id="hero">
-        <FloatingSkillsBackground />
-        <HeroOverlay />
-      </div>
-      <section id="about">
-        <AboutMe />
-      </section>
-      <section id="summary">
-        <GitHubSummary />
-      </section>
-      <Projects />
-      <Testimonials />
-      <section id="timeline">
-        <Timeline />
-      </section>
-      <Footer />
-    </main>
+      <main id="main-content">
+        <HeroSystem />
+        <EngineeringEquation />
+        <ImpactRail />
+        <WorkShowcase />
+        <CapabilityMap />
+        <CareerEvidence />
+      </main>
+      <ContactFooter />
+    </SmoothScroll>
   );
 }

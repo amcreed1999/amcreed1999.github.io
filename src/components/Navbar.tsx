@@ -1,110 +1,113 @@
 "use client";
-import Link from "next/link";
-import { useState } from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import Image from "next/image";
+
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
-const Navbar = () => {
-  const { theme, setTheme } = useTheme();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const links = [
+  { label: "Impact", href: "#impact", id: "impact" },
+  { label: "Work", href: "#work", id: "work" },
+  { label: "Capabilities", href: "#capabilities", id: "capabilities" },
+  { label: "Journey", href: "#journey", id: "journey" },
+  { label: "Contact", href: "#contact", id: "contact" },
+];
 
-  // Toggle theme
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
+export default function Navbar() {
+  const { resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [active, setActive] = useState("top");
+  const [progress, setProgress] = useState(0);
+  const [overHero, setOverHero] = useState(true);
+
+  useEffect(() => setMounted(true), []);
+
+  useEffect(() => {
+    const sections = ["top", ...links.map((link) => link.id)]
+      .map((id) => document.getElementById(id))
+      .filter(Boolean) as HTMLElement[];
+
+    const onScroll = () => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(scrollable > 0 ? Math.min(window.scrollY / scrollable, 1) : 0);
+      const hero = document.getElementById("top");
+      setOverHero(hero ? window.scrollY < hero.offsetHeight - 76 : false);
+
+      const marker = window.scrollY + window.innerHeight * 0.35;
+      let current = "top";
+      for (const section of sections) {
+        if (section.offsetTop <= marker) current = section.id;
+      }
+      setActive(current);
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
+  const closeMenu = () => setMenuOpen(false);
+  const dark = mounted && resolvedTheme === "dark";
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
-          {/* Logo/Name */}
-          <div className="flex items-center space-x-3">
-            <Avatar>
-              <AvatarImage src="/Images/Avatar.png" />
-              <AvatarFallback>CN</AvatarFallback>
-            </Avatar>
-            <Link href="/" className="text-xl font-semibold text-gray-800 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
-              Adam Creed
-            </Link>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
-            {["About", "Timeline", "Projects", "Skills", "Contact"].map((item) => (
-              <Link
-                key={item}
-                href={item === "Contact" ? "#contact" : `#${item.toLowerCase()}`}
-                className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
-              >
-                {item}
-              </Link>
-            ))}
-          </div>
-
-          {/* Custom Theme Switch */}
-          <div className="hidden md:flex items-center space-x-3">
-            <div
-              onClick={toggleTheme}
-              className={`w-14 h-8 flex items-center rounded-full cursor-pointer p-1 transition-colors duration-300 ${
-                theme === "dark" ? "bg-blue-600" : "bg-gray-300"
-              }`}
-            >
-              <div
-                className={`w-6 h-6 rounded-full bg-white shadow-md transform transition-transform duration-300 ${
-                  theme === "dark" ? "translate-x-6" : "translate-x-0"
-                }`}
-              >
-                <Image
-                  src={theme === "dark" ? "/Images/moon.png" : "/Images/sun.png"}
-                  alt="Theme icon"
-                  width={16}
-                  height={16}
-                  className="w-4 h-4 mx-auto mt-1.5"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 dark:focus:ring-blue-400"
-            >
-              <span className="sr-only">Open main menu</span>
-              {!isMenuOpen ? (
-                <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              ) : (
-                <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              )}
-            </button>
-          </div>
-        </div>
+    <header className={`site-header ${overHero ? "is-over-hero" : ""}`}>
+      <div className="scroll-progress" aria-hidden="true">
+        <span style={{ transform: `scaleX(${progress})` }} />
       </div>
+      <nav className="nav-shell" aria-label="Primary navigation">
+        <a className="wordmark" href="#top" onClick={closeMenu}>
+          <span>AC</span>
+          <span>Adam Creed</span>
+        </a>
 
-      {/* Mobile menu */}
-      {isMenuOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900">
-            {["About", "Timeline", "Projects", "Skills", "Contact"].map((item) => (
-              <Link
-                key={item}
-                href={item === "Contact" ? "#contact" : `#${item.toLowerCase()}`}
-                className="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
-              >
-                {item}
-              </Link>
-            ))}
-          </div>
+        <div id="mobile-navigation" className={`nav-links ${menuOpen ? "is-open" : ""}`}>
+          {links.map((link) => (
+            <a
+              key={link.id}
+              href={link.href}
+              aria-current={active === link.id ? "location" : undefined}
+              onClick={closeMenu}
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            className="nav-resume"
+            href="/Adam-Creed-Resume.pdf"
+            download
+            data-analytics-event="resume_download"
+            data-analytics-label="Résumé from navigation"
+          >
+            Résumé <span aria-hidden="true">↓</span>
+          </a>
         </div>
-      )}
-    </nav>
-  );
-};
 
-export default Navbar;
+        <div className="nav-controls">
+          <button
+            type="button"
+            className="theme-toggle"
+            aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
+            aria-pressed={dark}
+            onClick={() => setTheme(dark ? "light" : "dark")}
+          >
+            <span aria-hidden="true">{mounted ? (dark ? "☾" : "☀") : "○"}</span>
+          </button>
+          <button
+            type="button"
+            className="menu-toggle"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
+            aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <span />
+            <span />
+          </button>
+        </div>
+      </nav>
+    </header>
+  );
+}
