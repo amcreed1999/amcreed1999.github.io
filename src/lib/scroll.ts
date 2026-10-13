@@ -47,7 +47,7 @@ export function chapterScrollEnd(stepCount: number, viewportFactor = 1.35) {
   return () => `+=${Math.max(stepCount, 1) * window.innerHeight * viewportFactor}`;
 }
 
-export function chapterSnap(_stepCount: number) {
+export function chapterSnap() {
   return {
     // Snap only forward/back to the next label — feels like “rescroll to move on”.
     snapTo: "labelsDirectional" as const,
@@ -63,7 +63,7 @@ type PinScrubTimelineOptions = {
   pin: Element;
   scrub?: number | boolean;
   end?: string | (() => string);
-  snap?: boolean | number | ScrollTrigger.SnapVars;
+  snap?: ScrollTrigger.SnapVars | number | number[] | "labels" | "labelsDirectional";
   onUpdate?: (self: ScrollTrigger) => void;
 };
 
@@ -78,7 +78,7 @@ export function pinScrubTimeline(options: PinScrubTimelineOptions) {
       end,
       pin,
       scrub,
-      snap,
+      ...(snap !== undefined ? { snap } : {}),
       anticipatePin: 1,
       invalidateOnRefresh: true,
       onUpdate,

@@ -50,7 +50,7 @@ export default function ImpactRail() {
       pin: stage,
       scrub: true,
       end: chapterScrollEnd(stubs.length, 1.45),
-      snap: chapterSnap(stubs.length),
+      snap: chapterSnap(),
       onUpdate: () => {
         const label = tl.currentLabel() ?? "step-0";
         const active = Number(label.replace("step-", "")) || 0;

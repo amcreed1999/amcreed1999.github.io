@@ -36,7 +36,7 @@ export default function CapabilityMap() {
       pin: stage,
       scrub: true,
       end: chapterScrollEnd(layers.length, 1.4),
-      snap: chapterSnap(layers.length),
+      snap: chapterSnap(),
     });
 
     tl.addLabel("step-0");

@@ -54,7 +54,7 @@ export default function WorkShowcase() {
       pin,
       scrub: true,
       end: chapterScrollEnd(chapters.length, 1.4),
-      snap: chapterSnap(chapters.length),
+      snap: chapterSnap(),
       onUpdate: () => {
         const label = tl.currentLabel() ?? "step-0";
         const active = Number(label.replace("step-", "")) || 0;
