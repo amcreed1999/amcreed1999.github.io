@@ -1,139 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
-import CaseStudyDialog from "./CaseStudyDialog";
+import type { CSSProperties } from "react";
 import TearCoupon from "./TearCoupon";
 import { caseStudies, type CaseStudy } from "@/lib/portfolio-data";
-import {
-  canUsePinnedScroll,
-  chapterScrollEnd,
-  chapterSnap,
-  destroyTimeline,
-  gsap,
-  pinScrubTimeline,
-  syncActiveClass,
-} from "@/lib/scroll";
-
-const HOLD = 1.6;
-const TRANSITION = 1.2;
 
 export default function WorkShowcase() {
-  const [selected, setSelected] = useState<CaseStudy | null>(null);
-  const sectionRef = useRef<HTMLElement>(null);
-  const pinRef = useRef<HTMLDivElement>(null);
-  const closeDialog = useCallback(() => setSelected(null), []);
-
-  useEffect(() => {
-    const pin = pinRef.current;
-    if (!pin || !canUsePinnedScroll()) return;
-
-    const chapters = gsap.utils.toArray<HTMLElement>(pin.querySelectorAll("[data-work-chapter]"));
-    if (chapters.length < 2) return;
-
-    gsap.set(chapters, {
-      opacity: 0,
-      y: 36,
-      rotate: 1.2,
-      scale: 0.97,
-      pointerEvents: "none",
-      transformOrigin: "50% 50%",
-    });
-    gsap.set(chapters[0], { opacity: 1, y: 0, rotate: 0, scale: 1, pointerEvents: "auto" });
-    gsap.set(chapters[0].querySelectorAll("[data-signal-node]"), {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-    });
-    const firstPerforation = chapters[0].querySelector<HTMLElement>(".tear-coupon-perforation i");
-    if (firstPerforation) gsap.set(firstPerforation, { scaleX: 1 });
-    syncActiveClass(chapters, 0);
-
-    const tl = pinScrubTimeline({
-      trigger: pin,
-      pin,
-      scrub: true,
-      end: chapterScrollEnd(chapters.length, 1.4),
-      snap: chapterSnap(),
-      onUpdate: () => {
-        const label = tl.currentLabel() ?? "step-0";
-        const active = Number(label.replace("step-", "")) || 0;
-        syncActiveClass(chapters, Math.min(active, chapters.length - 1));
-      },
-    });
-
-    tl.addLabel("step-0");
-    tl.to({}, { duration: HOLD });
-
-    chapters.forEach((chapter, index) => {
-      if (index === 0) return;
-      const prev = chapters[index - 1];
-      const at = tl.duration();
-      const nodes = chapter.querySelectorAll<HTMLElement>("[data-signal-node]");
-      const perforation = chapter.querySelector<HTMLElement>(".tear-coupon-perforation i");
-
-      tl.to(
-        prev,
-        {
-          opacity: 0,
-          y: -36,
-          rotate: -1.4,
-          scale: 0.97,
-          pointerEvents: "none",
-          duration: TRANSITION,
-          ease: "power2.inOut",
-        },
-        at,
-      );
-      tl.fromTo(
-        chapter,
-        { opacity: 0, y: 44, rotate: 1.8, scale: 0.96, pointerEvents: "none" },
-        {
-          opacity: 1,
-          y: 0,
-          rotate: 0,
-          scale: 1,
-          pointerEvents: "auto",
-          duration: TRANSITION,
-          ease: "power2.out",
-        },
-        at + 0.2,
-      );
-      if (perforation) {
-        tl.fromTo(
-          perforation,
-          { scaleX: 0 },
-          { scaleX: 1, duration: TRANSITION * 0.7, ease: "power3.out" },
-          at + 0.35,
-        );
-      }
-      if (nodes.length) {
-        gsap.set(nodes, { opacity: 0, y: 12, scale: 0.92 });
-        tl.to(
-          nodes,
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            stagger: 0.1,
-            duration: TRANSITION * 0.6,
-            ease: "power3.out",
-          },
-          at + 0.4,
-        );
-      }
-      tl.addLabel(`step-${index}`);
-      tl.to({}, { duration: HOLD });
-    });
-
-    return () => destroyTimeline(tl);
-  }, []);
-
   return (
     <section
-      ref={sectionRef}
       id="work"
-      className="work-section work-scroll"
+      className="work-section"
       aria-labelledby="work-title"
     >
       <div className="section-shell section-intro work-intro">
@@ -146,7 +22,7 @@ export default function WorkShowcase() {
         </p>
       </div>
 
-      <div ref={pinRef} className="work-pin-stage">
+      <div className="work-pin-stage">
         <div className="work-chapter-stage section-shell" aria-label="Case study chapters">
           {caseStudies.map((study, index) => (
             <article
@@ -166,12 +42,7 @@ export default function WorkShowcase() {
                     <strong>{String(index + 1).padStart(2, "0")}</strong>
                     <i>{String(caseStudies.length).padStart(2, "0")}</i>
                   </div>
-                  <button
-                    type="button"
-                    className="case-visual"
-                    onClick={() => setSelected(study)}
-                    aria-label={`Read case study: ${study.title}`}
-                  >
+                  <div className="case-visual">
                     {study.image ? (
                       <Image
                         src={study.image}
@@ -183,10 +54,7 @@ export default function WorkShowcase() {
                     ) : (
                       <CaseSignal study={study} />
                     )}
-                    <span className="case-open" aria-hidden="true">
-                      Open case ↗
-                    </span>
-                  </button>
+                  </div>
 
                   <div className="case-copy">
                     <div className="case-meta">
@@ -194,23 +62,45 @@ export default function WorkShowcase() {
                       <span>{study.category}</span>
                     </div>
                     <h3>{study.title}</h3>
-                    <p>{study.summary}</p>
-                    <div className="case-impact">
-                      <strong>{study.impact}</strong>
-                      <span>{study.impactLabel}</span>
+                    <p className="case-summary">{study.summary}</p>
+                    <div className="case-impact-grid" aria-label="Measured outcomes">
+                      <div className="case-impact">
+                        <strong>{study.impact}</strong>
+                        <span>{study.impactLabel}</span>
+                      </div>
+                      {study.secondaryImpact && (
+                        <div className="case-impact case-impact-secondary">
+                          <strong>{study.secondaryImpact.value}</strong>
+                          <span>{study.secondaryImpact.label}</span>
+                        </div>
+                      )}
+                    </div>
+                    <p className="case-description">{study.description}</p>
+                    <div className="case-outcomes">
+                      <h4>What changed</h4>
+                      <ul>
+                        {study.outcomes.map((outcome) => (
+                          <li key={outcome}>{outcome}</li>
+                        ))}
+                      </ul>
                     </div>
                     <div className="tag-list" aria-label="Technologies">
-                      {study.technologies.slice(0, 5).map((technology) => (
+                      {study.technologies.map((technology) => (
                         <span key={technology}>{technology}</span>
                       ))}
                     </div>
-                    <button
-                      type="button"
-                      className="text-link case-link"
-                      onClick={() => setSelected(study)}
-                    >
-                      Read the case study <span aria-hidden="true">↗</span>
-                    </button>
+                    {study.website && (
+                      <a
+                        className="text-link case-link"
+                        href={study.website}
+                        target="_blank"
+                        rel="noreferrer"
+                        data-analytics-event="project_visit"
+                        data-analytics-label={study.title}
+                      >
+                        Visit the project <span aria-hidden="true">↗</span>
+                      </a>
+                    )}
                   </div>
                 </div>
               </TearCoupon>
@@ -218,8 +108,6 @@ export default function WorkShowcase() {
           ))}
         </div>
       </div>
-
-      {selected && <CaseStudyDialog study={selected} onClose={closeDialog} />}
     </section>
   );
 }

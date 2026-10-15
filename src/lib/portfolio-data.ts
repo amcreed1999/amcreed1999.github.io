@@ -11,6 +11,10 @@ export interface CaseStudy {
   summary: string;
   impact: string;
   impactLabel: string;
+  secondaryImpact?: {
+    value: string;
+    label: string;
+  };
   description: string;
   outcomes: string[];
   technologies: string[];
@@ -115,6 +119,10 @@ export const caseStudies: CaseStudy[] = [
       "Replaced a fragile synchronous invoicing process with an asynchronous outbox workflow designed around retries, isolation and reconciliation.",
     impact: "1,000+",
     impactLabel: "jobs initiated in under six seconds",
+    secondaryImpact: {
+      value: "A$2M",
+      label: "customer invoices processed each month",
+    },
     description:
       "The previous path could take around 15 minutes near 100 invoices. The outbox redesign initiates 1,000+ jobs in under six seconds with retries, failure isolation and reconciliation. A related MYOB integration processes about A$2M in customer invoices each month — coordinated sequencing, targeted retries, database fallbacks and token-refresh locking.",
     outcomes: [
