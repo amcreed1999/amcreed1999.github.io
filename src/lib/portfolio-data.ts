@@ -38,6 +38,8 @@ export interface EngineeringRoot {
   title: string;
   context: string;
   description: string;
+  href?: string;
+  linkLabel?: string;
 }
 
 /** What Adam wants next — drives hero lede and contact CTA. */
@@ -69,7 +71,7 @@ export const impactMetrics: ImpactMetric[] = [
   {
     value: "30s → <1s",
     label: "Live vehicle update latency",
-    context: "Roughly 1K concurrently active vehicles",
+    context: "Roughly 1K concurrently active trucks",
   },
   {
     value: "≈4 hrs",
@@ -114,7 +116,7 @@ export const caseStudies: CaseStudy[] = [
     impact: "1,000+",
     impactLabel: "jobs initiated in under six seconds",
     description:
-      "The previous path could take around 15 minutes near 100 invoices. The outbox redesign initiates 1,000+ jobs in under six seconds with retries, failure isolation and reconciliation. A related MYOB integration processes about A$500k in customer invoices each month — coordinated sequencing, targeted retries, database fallbacks and token-refresh locking.",
+      "The previous path could take around 15 minutes near 100 invoices. The outbox redesign initiates 1,000+ jobs in under six seconds with retries, failure isolation and reconciliation. A related MYOB integration processes about A$2M in customer invoices each month — coordinated sequencing, targeted retries, database fallbacks and token-refresh locking.",
     outcomes: [
       "A slow, timeout-prone workflow became fast and observable",
       "Individual failures no longer hold the entire batch hostage",
@@ -139,7 +141,7 @@ export const caseStudies: CaseStudy[] = [
     impact: "<1 second",
     impactLabel: "updates, down from 30 seconds",
     description:
-      "The new flow supports roughly 1K concurrently active vehicles, treating consistency, connection behaviour and production diagnosis as first-class concerns — not frontend polish.",
+      "The new flow supports roughly 1K concurrently active trucks, treating consistency, connection behaviour and production diagnosis as first-class concerns — not frontend polish.",
     outcomes: [
       "Operators see meaningful movement as it happens",
       "Live and historical views stay aligned",
@@ -248,10 +250,12 @@ export const capabilityStages: CapabilityStage[] = [
 
 export const engineeringRoots: EngineeringRoot[] = [
   {
-    title: "EEG visualisation in VR",
-    context: "MEngSc research · University College Cork",
+    title: "M2EEG-VR",
+    context: "Sensors · MEngSc · University College Cork",
     description:
-      "Built a clinician-focused OpenXR environment in Unity, C# and Python — early proof I can enter an unfamiliar domain and ship a complete system.",
+      "First-author peer-reviewed paper on multi-modal EEG visualisation and AI-assisted sonification in VR for neonatal seizure detection — Unity, C#, Python and OpenXR.",
+    href: "https://doi.org/10.3390/s26134167",
+    linkLabel: "Sensors · DOI",
   },
   {
     title: "Remote environmental monitoring",
@@ -273,21 +277,28 @@ export const careerEntries: CareerEntry[] = [
     role: "Engineering Team Lead",
     organisation: "FreightCyber · Melbourne",
     description:
-      "Technical direction, architecture and production reliability for a 13-person engineering team across web, mobile and backend AWS services — still hands-on.",
+      "Hiring, mentoring and technical direction for a 13-person engineering team across web, mobile and backend AWS services — still hands-on in architecture, reviews and incidents. FreightCyber builds FCX, an enterprise OS for Australian transport and logistics.",
   },
   {
     period: "Apr 2025 — Jan 2026",
     role: "Full Stack Engineer",
     organisation: "FreightCyber · Melbourne",
     description:
-      "Distributed financial, fleet and operational systems in TypeScript, Python, PostgreSQL and AWS — invoicing, MYOB integration and live tracking.",
+      "Distributed financial, fleet and operational systems in TypeScript, Python, PostgreSQL and AWS — invoicing, MYOB integration and live tracking for ~1K concurrent trucks.",
+  },
+  {
+    period: "Oct 2024 — Mar 2025",
+    role: "Travel / relocation",
+    organisation: "Ireland → Melbourne",
+    description:
+      "Career break travelling while relocating from Ireland to Melbourne.",
   },
   {
     period: "Jul 2023 — Oct 2024",
     role: "Postgraduate Researcher",
     organisation: "University College Cork",
     description:
-      "Clinician-focused 3D EEG visualisation in Unity, C#, Python and OpenXR with the Embedded Systems Research Group.",
+      "Clinician-focused 3D EEG visualisation in Unity, C#, Python and OpenXR with the Embedded Systems Research Group — published as first author in Sensors (M2EEG-VR).",
   },
   {
     period: "Summer 2023",

@@ -107,6 +107,10 @@ export default function CareerEvidence() {
             before Melbourne.
           </p>
           <div className="education-detail">
+            <span>Publication</span>
+            <strong>Sensors 2026 · M2EEG-VR</strong>
+          </div>
+          <div className="education-detail">
             <span>Applied AI</span>
             <strong>Hugging Face AI Agents Fundamentals</strong>
           </div>
@@ -132,7 +136,22 @@ export default function CareerEvidence() {
             <article key={root.title}>
               <span>{root.context}</span>
               <h4>{root.title}</h4>
-              <p>{root.description}</p>
+              <div className="roots-copy">
+                <p>{root.description}</p>
+                {root.href ? (
+                  <a
+                    className="text-link"
+                    href={root.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    data-analytics-event="publication_click"
+                    data-analytics-label={root.title}
+                  >
+                    {root.linkLabel ?? "Read paper"}{" "}
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                ) : null}
+              </div>
             </article>
           ))}
         </div>
